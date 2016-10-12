@@ -3,11 +3,11 @@ title: Übersicht
 chapter: ArgonJS
 ---
 
-A javascript framework for adding augmented reality content to web applications
+Javascript Framework um Augmented Reality Inhalte in Web Anwendungen darzustellen
 
 ## Beschreibung
-Augmented reality (AR) is the idea of mixing computer-generated media (e.g., 3D objects, 2D content, spatialized audio) with someone’s view of the real world. Whether you want to create a new AR application, or add an AR view to an existing web application, the argon.js framework provides a set of abstractions and utilities for adding an AR view to your web application in a platform- and technology-independent way.
+Augmented reality (AR) ist eine Technik um computergenerierte Inhalte ( z.B. 3D / 2D Objekte) mit der eigenen Sicht zu kombinieren. Dabei ist es egal ob man eine neue AR Anwendung oder eine AR Sicht zu einer existierenden Webanwendung hinzufügen möchte, das argon.js Framework bietet eine Vielzahl an Abstraktionen und Werkzeugen um dies platformneutral zu ermöglichen.  
 
-argon.js was originally designed to take advantage of the augmented reality capabilities of the Argon AR-enabled web browser on iOS, simplifying the process of delivering mobile AR experiences without the need to create, ship and support native applications.
+argon.js wurde zwar ursprünglich für den Argon iOS Browser entwickelt, da der Standardbrowser Safari gewisse HTML5 Standards nicht unterstützt, mittlerweile verbessert sich aber die AR Unterstützung in allen Browsern immer weiter.
 
-However, argon.js will also work with other web browsers, taking advantage of their capabilities to allow your application to deliver whatever kind of AR experience each browser is capable of. While the AR capabilities a most web browsers is currently minimal, they are improving rapidly, and argon.js is designed to support this evolution.
+Daher funktioniert argon.js auch mit anderen Browsern und schöpft deren Möglichkeiten AR Inhalte darzustellen so gut wie möglich aus.
