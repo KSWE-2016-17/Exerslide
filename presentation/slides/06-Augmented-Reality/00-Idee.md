@@ -11,4 +11,4 @@ Ist ein Rätsel gelöst, verrät es Informationen über den Standort des nächst
 Neben den geobasierten AR-Objekten, können auch innerhalb der Gebäude Marker wie QR-Codes platziert werden, um das fehlende GPS-Signal zu kompensieren.  
 
 ## Bibliotheken
-Für die Entwicklung von Augmented Reality Web-Applikationen gibt es diverse Javascript Bibliotheken. Neben der in der Vorlesung genannten Bibliothek A-Frame, existiert die Bibliothek ArgonJS. Diese bietet die Möglichkeit Browser und Endgerät übergreifend auf lokale Ressourcen wie Kamera und GPS-Position zuzugreifen. 
+Für die Entwicklung von Augmented Reality Web-Applikationen gibt es diverse Javascript Bibliotheken. Neben der in der Vorlesung genannten Bibliothek A-Frame, existiert die Bibliothek ArgonJS. Diese bietet die Möglichkeit Browser und Endgerät übergreifend auf lokale Ressourcen wie Kamera und GPS-Position zuzugreifen. Weitere Informationen zu der ArgonJS Bibliothek, kann im Kapitel [7.2 ArgonJS](#/7) nachgelesen werden. 
