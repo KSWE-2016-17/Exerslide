@@ -17,4 +17,5 @@ presentation framework.
 - Clone or download the repository.
 - `cd` into the `presentation` directory.
 - Run `npm install`.
-- Run either `exerslide serve` for a debug-presentation or `exerslide build` for a release-presentation.
+- Run either `exerslide serve` for a debug-presentation or `exerslide build` for
+  a release-presentation.
