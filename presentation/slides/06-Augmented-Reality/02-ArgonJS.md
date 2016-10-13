@@ -1,6 +1,7 @@
 ---
 title: ArgonJS
-chapter: ArgonJS
+chapter: Augmented Reality
+id: AR_ArgonJS
 ---
 
 Javascript Framework um Augmented Reality Inhalte in Web Anwendungen darzustellen
