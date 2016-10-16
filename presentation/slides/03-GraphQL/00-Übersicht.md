@@ -9,5 +9,6 @@ GrahpQL ist eine Query Sprache für APIs und ein Framework um diese Anfragen zu 
 
 ## Projekt Repositories
 
-[GitHubStats](https://github.com/KSWE-2016-17/GitHubStatsGraphQL)<br>
+[GitHubStats](https://github.com/KSWE-2016-17/graphql-github-stats)
+
 **TODO** find.me repo verlinken.
