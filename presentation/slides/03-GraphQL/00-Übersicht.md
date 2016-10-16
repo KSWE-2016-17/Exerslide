@@ -1,4 +1,4 @@
 ---
 title: Übersicht
-chapter: Elm
+chapter: GraphQL
 ---
