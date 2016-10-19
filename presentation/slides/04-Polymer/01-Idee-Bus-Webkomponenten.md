@@ -9,10 +9,10 @@ Die Software soll dem Busfahrer schnell nötige Informationen übermitteln um ei
 
 # Mögliche Informationen:
 
-Aktuelle Zeit
-Geplante nächste Stationen (Ankunft, Abfahrtzeit)
-Aktuelle Verspätungen
-Anschlüsse
+- Aktuelle Zeit
+- Geplante nächste Stationen (Ankunft, Abfahrtzeit)
+- Aktuelle Verspätungen
+- Anschlüsse
 
 # Umsetzung:
 Für die einzelnen Informationen sollen Webkomponenten mittels Polymer entwickelt werden.
