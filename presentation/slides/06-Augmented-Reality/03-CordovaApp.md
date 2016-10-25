@@ -4,11 +4,13 @@ chapter: Augmented Reality
 id: CordovaViewerApp
 ---
 
-Da der Zugriff auf die Kamera, je nach Mobiles-Betriebssystem und Browser unterschiedlich verhält, instabil läuft oder nicht möglich ist, soll der Project Campus Viewer Abhilfe schaffen. Dieser ist im folgenden Github Repository zu finden.
+Da sich der Zugriff auf die Kamera, je nach mobilem Gerät / Betriebssystem und Browser unterschiedlich verhält, der Kamera Feed instabil oder nicht flüssig genug für die Anforderungen eines AR Spiels läuft oder garnicht erst möglich ist, soll der Project Campus Viewer Abhilfe schaffen. Diese auf dem Cordova Framework basierende mobile App kann nativ auf die Kamera zugreifen sowie darstellen und Webinhalte darüber legen.
 
-https://github.com/KSWE-2016-17/project-campus-viewer
+Sie ist in folgendem Github Repository zu finden:
 
-# Laden und ausführen/debuggen
+<a href="https://github.com/KSWE-2016-17/project-campus-viewer">https://github.com/KSWE-2016-17/project-campus-viewer</a>
+
+# Laden und ausführen / debuggen
 
 ## Vorbereitung
 ```
@@ -23,7 +25,7 @@ cordova prepare
 #### Android Command Line Tools
 Android Studio beinhaltetet alle nötigen tools um eine App für Android zu kompilieren. Falls Sie Android Studi nicht installieren wollen, gibt es ebenfalls die Möglichkeit nur die Command Line Tools zu laden.
 
-https://developer.android.com/studio/index.html#downloads
+<a href="https://developer.android.com/studio/index.html#downloads">https://developer.android.com/studio/index.html#downloads</a>
 
 Der Pfad zu den Command Line Tools muss nach dem entpacken der Umgebungsvariablen hinzugefügt werden.
 
@@ -48,7 +50,7 @@ cordova build android
 cordova run android
 ```
 
-## iOS (untested)
+## iOS (ungetestet)
 
 ### Kompilieren
 
@@ -70,7 +72,7 @@ Verwendete Cordova Plugins
 
 ## FAQs
 
-#### Informations
+#### Informationen
 Webinhalte benötigen folgende CSS damit der darunter liegende Kamera Feed sichtbar ist.
 ```
 html, body {
@@ -79,7 +81,7 @@ html, body {
 ```
 
 
-#### IOS Quirks:
+#### iOS Besonderheiten:
 Es ist nicht möglich die Webcam des Computer im Simulator zu nutzen.
 
 #### basiert auf:
