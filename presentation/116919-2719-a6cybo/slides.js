@@ -1,0 +1,17 @@
+module.exports = [
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/00-Electron/00-Übersicht.md"),
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/00-Electron/01-Idee.md"),
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/00-Electron/02-Pflichtenheft.md"),
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/01-AngularJS/00-Übersicht.md"),
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/01-AngularJS/01-Idee.md"),
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/02-Elm/00-Übersicht.md"),
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/03-GraphQL/00-Übersicht.md"),
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/03-GraphQL/01-Idee-GitHubStats.md"),
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/03-GraphQL/02-Idee-findme-Migration.md"),
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/04-Polymer/00-Übersicht.md"),
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/04-Polymer/01-Idee-Bus-Webkomponenten.md"),
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/05-A-Frame/00-Overview.md"),
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/05-A-Frame/01-Idee.md"),
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/06-Augmented-Reality/00-Übersicht.md"),
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/06-Augmented-Reality/01-Idee.md"),
+require("/home/sebi/kswe/srose1/exerslide/Exerslide/presentation/node_modules/exerslide/lib/slide-loader!../slides/06-Augmented-Reality/02-ArgonJS.md")];
