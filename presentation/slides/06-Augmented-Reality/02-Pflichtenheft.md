@@ -30,5 +30,6 @@ id: AR-Pflichtenheft
 ### Begrüßungsbildschirm
 
 ### Hauptansicht
+![Main Screen](./images/mockups/mainscreen.png "Main Screen")
 
 ### Inventar
