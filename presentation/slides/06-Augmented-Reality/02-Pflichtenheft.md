@@ -33,3 +33,10 @@ id: AR-Pflichtenheft
 ![Main Screen](./images/mockups/mainscreen.png "Main Screen")
 
 ### Inventar
+![Inventar](./images/mockups/InventarOpen.png "Inventar")
+
+### Items kombinieren
+![Item combining] (./images/mockups/ItemCombining.png "Item combining")
+
+### Item kombinert
+![Item combined] (./images/mockups/ItemCombined.png "Item combined")
