@@ -37,7 +37,7 @@ id: AR-Pflichtenheft
 ![Inventar](./images/mockups/InventarOpen.png "Inventar")
 
 ### Items kombinieren
-![Item combining] (./images/mockups/ItemCombining.png "Item combining")
+![Item combining](./images/mockups/ItemCombining.png "Item combining")
 
 ### Item kombinert
-![Item combined] (./images/mockups/ItemCombined.png "Item combined")
+![Item combined](./images/mockups/ItemsCombined.png "Item combined")
