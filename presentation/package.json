@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "scripts": {
+    "prebuild": "npm -s i",
+    "build": "exerslide build"
+  },
   "dependencies": {
     "codemirror": "^5.7.0",
     "exerslide": "~1.1.2",
