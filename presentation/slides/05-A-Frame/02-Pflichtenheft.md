@@ -70,189 +70,289 @@ Das Produkt wird über das Internet angeboten. Dahinter verbirgt sich eine Clien
 
 ## 3.2 Use-Case Tabellen
 
-#### UC-1 Profil verwalten
-| Use Case ID: | UC-1  |
-| --| --|
-| Title: |  Profil verwalten |
-| Description: | User verwaltet sein Profil |
-| Trigger | - |
-| Primary Actor | User |
-| Preconditions | - |
-| Postconditions | - |
-| Other Use Cases | - |
-| Main <br> Success Scenario: | 1. User verwaltet sein Profil |
-| Extensions | -  |
-| Owner | Oxana Zh / Karsten T |
-| Priority | High |
-
-#### UC-1.1 Anmelden
-| Use Case ID: | UC-1.1  |
-| --| --|
-| Title: | User Anmeldung/Login |
-| Description: | User meldet sich auf der Plattform an um sie zu nutzen |
-| Trigger | Login Button |
-| Primary Actor | User |
-| Preconditions | UC-1.2 |
-| Postconditions | User kann die Plattform nutzen |
-| Other Use Cases | UC-1.2 |
-| Main <br> Success Scenario: | 1. User klickt auf anmelden <br>  2. System zeigt Anmeldefenster <br>  3. User gibt Namen ein  <br>  4. User gibt Passwort ein  <br>  5. User klickt auf Anmelden 6. System prüft Daten |
-| Extensions | 6a. Username nicht gefunden <br>  6b. Passwort falsch <br>  - 6a/b.1 System weist auf Fehler hin und führt Anmeldung nicht durch |
-| Owner | Oxana Zh / Karsten T |
-| Priority | High |
-
-#### UC-1.2 Registrieren
-| Use Case ID: | UC-1.2  |
+### UC-1 Registrieren
+| Use Case ID: | UC-1 |
 | --| --|
 | Title: | User Registrieren |
 | Description: | User registriert sich (neuer User) um Plattform zu nutzen |
 | Trigger | Registrieren Button |
 | Primary Actor | User |
 | Preconditions | - |
-| Postconditions | User ist registriert und kann sich anmelden, UC-1.1 |
-| Other Use Cases | UC-1.1 |
-| Main <br> Success Scenario: | 1. User klickt auf registrieren 2. System zeigt Registrierungsfenster 3. User gibt Namen an 4. User gibt Passwort an 5. User klickt auf Bestätigen |
-| Extensions | 3a. Ungültiger Name <br>  3b. Kein Name <br>  3c. Name existiert bereits <br>  4a. Ungültiges Passwort <br>  4b. Kein Passwort <br> -  3a-c/4a-b.1 System weist auf Fehler hin und führt Registrierung nicht durch |
+| Postconditions | User ist registriert und kann sich anmelden |
+| Other Use Cases | - |
+| Main <br> Success Scenario: | 1. User klickt auf Registrieren <br> 2. System zeigt Registrierungsfenster <br> 3. User gibt Usernamen an <br> 4. User gibt Passwort an <br> 5. System prüft ob alle Felder richtig ausgefüllt sind <br> 6. System blendet den Button "Registrieren" ein <br> 7. User klickt auf Bestätigen <br> 8. System registriert neuen User |
+| Extensions | 3a. User gibt ungültigen Namen ein <br> - 3a.1 System zeigt Fehlermeldung "Name in ungültigen Format eingegeben" <br> 3b. Kein Name eingegeben <br> - 3b.1 System zeigt  Fehlermeldung "kein Name eingegeben" <br> 3c. Name existiert bereits <br> - 3c.1 System zeigt Fehlermeldung: "diese Username existiert bereits. Wählen Sie einen anderen Usernamen aus." <br> 4a. Ungültiges Passwort Format <br> - 4a.1 System zeigt Fehlermeldung: "ungültiges Passwort Format" <br> 4b. Kein Passwort eingegeben <br> - 4b.1 System zeigt Fehlermeldung: "kein Passwort eingegeben"<br> 7a nicht alle Felder sind richtig ausgefüllt <br> - 7a.1 System zeigt Fehlermeldung: "Füllen Sie alle Felder aus" <br> - 7a.2 User kann versuchen die Registrierung nochmal durchzuführen(Schritt 3 -7 ) |
+| Owner | Oxana Zh / Karsten T |
+| Priority | High |
+### UC-2 Anmelden
+| Use Case ID: | UC-2 |
+| --| --|
+| Title: | User Anmeldung/Login |
+| Description: | User meldet sich auf der Plattform an um sie zu nutzen |
+| Trigger |User klickt auf Login Button |
+| Primary Actor | User |
+| Preconditions | User ist auf der Plattform bereits registriert |
+| Postconditions | User ist unter seinem Namen in System angemeldet |
+| Other Use Cases | UC-1 |
+| Main <br> Success Scenario: |  1. System zeigt Anmeldefenster <br>  2. User gibt Usernamen ein  <br>  3. User gibt Passwort ein  <br>  4. User klickt auf Button "Anmelden" <br> 5. System prüft Daten <br> 6. System zeigt den User sein Raum |
+| Extensions | 5a. angegebene Username existiert nicht <br> - 5a.1 System zeigt Fehlermeldung: "Username existiert nicht" und führt die Anmeldung nicht durch <br> - 5a.2 User kann Schritt 2 wiederholen <br> 5b. Passwort falsch eingegeben <br> - 5b.1 System zeigt Fehlermeldung: "Falsches Passwort eingegeben" und führt die Anmeldung nicht durch <br> - 5b.2 User kann Schritt 3 wiederholen <br>  |
+| Owner | Oxana Zh / Karsten T |
+| Priority | High |
+### UC-3 Abmelden
+| Use Case ID: | UC-3 |
+| --| --|
+| Title: | User Abmeldung/Logout |
+| Description: | User meldet sich von der Plattform ab |
+| Trigger |User klickt auf Logout Button |
+| Primary Actor | User |
+| Preconditions | User ist auf der Plattform bereits registriert und angemeldet |
+| Postconditions | User ist nicht mehr angemeldet |
+| Other Use Cases | UC-2 |
+| Main <br> Success Scenario: |  1. System meldet den User von der Plattform ab <br> 2. System zeigt Anmeldeform an |
 | Owner | Oxana Zh / Karsten T |
 | Priority | High |
 
-
-#### UC-1.3 VR-Raum teilen
-| Use Case ID: | UC-1.3 |
+### UC-4 Räume verwalten
+| Use Case ID: | UC-4 |
 | --| --|
-| Title: | VR-Raum teilen |
+| Title: | Räume verwalten |
+| Description: | User Verwaltet seine VR Räume |
+| Trigger | User wählt in Hauptmenü den Punkt "Meine Räume" aus |
+| Primary Actor | User |
+| Preconditions | User ist auf der Plattform bereits registriert und angemeldet |
+| Postconditions | User kann ihm zur Verfügung stehende Räume verwalten |
+| Other Use Cases | UC-2 |
+| Main <br> Success Scenario: |  1. System zeigt Menüpunkte zum verwalten der Räume an: <br>  - a Raum wählen <br> - b Raum erstellen <br> - c Raum löschen <br> - d Raum mit User teilen <br> - e Wandfarbe ändern <br> - f Sky Box ändern <br> - g Wandsichtbarkeit ändern |
+| Owner | Oxana Zh / Karsten T |
+| Priority | High |
+
+#### UC-4.1 Raum wählen
+| Use Case ID: | UC-4.1 |
+| --| --|
+| Title: | Raum wählen |
+| Description: | User wählt und wechselt den Raum |
+| Trigger | User wählt Menü "Raum wechseln" |
+| Primary Actor | User |
+| Preconditions | User hat menü "Meine Räume" geöffnet |
+| Postconditions | User hat Raum gewechselt |
+| Other Use Cases | UC-4 |
+| Main <br> Success Scenario: |  1. System zeigt zur Verfügung stehende Räume <br> 2. User wählt Raum aus Dropdown-Menü <br> 3. System lädt den gewählten Raum |
+| Owner | Oxana Zh / Karsten T |
+| Priority | High |
+
+#### UC-4.2 Raum erstellen
+| Use Case ID: | UC-4.2 |
+| --| --|
+| Title: | Raum erstellen |
+| Description: | User erstellt Raum mit einem Namen |
+| Trigger | User wählt Menü "Raum erstellen" |
+| Primary Actor | User |
+| Preconditions | User hat Menü "Meine Räume" geöffnet |
+| Postconditions | User hat einen neuen Raum erstellt |
+| Other Use Cases | UC-4 |
+| Main <br> Success Scenario: |  1. System zeigt Menü zum Raum erstellen an <br> 2. User gibt Namen für den neuen Raum an <br> 3. User drückt auf "OK" <br> 4. System erstellt neuen Raum |
+| Extensions | 3a. Ungültiger Raum Name <br> - 3a.1 System zeigt "Ungültiger Raum Name an"  und erstellt den Raum nicht <br> - 3a.2 User kann 2. wiederholen <br> 3b. Leerer Raum Name <br> - 3b.1 System zeigt "Leerer Name unzulässig" an und erstellt den Raum nicht <br> - 3b.2 User kann 2. wiederholen <br> 3c. Doppelter Raum Name <br> - 3c.1 System zeigt "Raum Name existiert bereits" an und erstellt den Raum nicht <br> - 3c.2 User kann 2. wiederholen  |
+| Owner | Oxana Zh / Karsten T |
+| Priority | High |
+
+#### UC-4.3 Raum löschen
+| Use Case ID: | UC-4.3 |
+| --| --|
+| Title: | Raum löschen |
+| Description: | User wählt Raum und löscht den Raum |
+| Trigger | User wählt Menü "Raum löschen" |
+| Primary Actor | User |
+| Preconditions | User hat Menü "Meine Räume" geöffnet |
+| Postconditions | User hat Raum gelöscht |
+| Other Use Cases | UC-4 |
+| Main <br> Success Scenario: |  1. System zeigt zur Verfügung stehende Räume <br> 2. User wählt Raum aus Dropdown-Menü <br> 3. User drückt auf "Löschen"<br>  4. System zeigt bestätigungs button<br>  5. User bestätigt seine Aktion <br> 6. System löscht ausgewählten Raum |
+| Extensions | 3a. User wählt aktuellen Raum <br> - 3a.1 System zeigt "Aktueller Raum kann nicht gelöscht werden" <br> - 3a.2 User kann 2. wiederholen |
+| Owner | Oxana Zh / Karsten T |
+| Priority | High |
+
+#### UC-4.4 Raum mit User teilen
+| Use Case ID: | UC-4.4 |
+| --| --|
+| Title: | Raum mit User teilen |
 | Description: | User gibt seinen Raum anderen Usern frei |
 | Trigger | "Teilen"-Button |
 | Primary Actor | User |
-| Preconditions | - |
+| Preconditions | User hat Menü "Meine Räume" geöffnet |
 | Postconditions | Andere User können VR-Raum betreten |
-| Other Use Cases | . |
+| Other Use Cases | UC-4 |
 | Main <br> Success Scenario: | 1. User klickt auf "Teilen" <br> 2. System zeigt Namensfeld <br> 3. User trägt Namen seines Freundes ein <br>  4. System teilt VR-Raum mit neuem User |
-| Extensions | 3a. User(Freund) existiert nicht <br> 3b. User(Freund) kennt Raum bereits <br>  - 3a.1. System meldet Fehler <br> - 3b.1 System meldet User kennt VR-Raum bereits |
+| Extensions | 3a. User existiert nicht <br> - 3a.1 System zeigt Fehlermeldung "User existiert nicht" <br> 3a.2 User kann Schritt 3. wiederholen <br>3b. User kennt Raum bereits <br>  - 3a.1. System meldet Fehler: "User kennt VR-Raum bereits" |
 | Owner | Oxana Zh / Karsten T |
 | Priority | Medium |
 
-#### UC-2 VR bewegen
-| Use Case ID: | UC-2  |
+#### UC-4.5 Wandfarbe ändern
+| Use Case ID: | UC-4.5 |
 | --| --|
-| Title: |  VR bewegen |
-| Description: | User kann sich in der VR bewegen |
+| Title: | Wandfarbe ändern |
+| Description: | User ändert Farbe der Wände in aktuellem Raum |
+| Trigger | Wählt eine Wand im Menü |
+| Primary Actor | User |
+| Preconditions | User hat Menü "Meine Räume" geöffnet |
+| Postconditions | Farbe der ausgewählte Wand wurde geändert |
+| Other Use Cases | UC-4 |
+| Main <br> Success Scenario: | 1. User wählt Wand aus Dropdown-Menü <br> 2. User wählt Wandfarbe <br> 3. System ändert Wandfarbe  |
+| Extensions | |
+| Owner | Oxana Zh / Karsten T |
+| Priority | Medium |
+
+#### UC-4.6 Sky Box ändern
+| Use Case ID: | UC-4.6 |
+| --| --|
+| Title: | Sky Box ändern |
+| Description: | User ändert Sky Box |
+| Trigger | User wählt neue SkyBox |
+| Primary Actor | User |
+| Preconditions | User hat Menü "Meine Räume" geöffnet |
+| Postconditions | Sky Box des Raumes wurde geändert |
+| Other Use Cases | UC-4 |
+| Main <br> Success Scenario: | 1. User wählt Image aus lokalem Dateisystem <br> 2. User drückt auf "Upload" <br> 3. System lädt Bild in Datenbank <br> 4. System aktualisiert Sky Box |
+| Extensions | 2a. Falsches Format <br> 2a.1 System meldet "Ungültiges Format" und verwirft die neue SkyBox <br> 2a.2 User kann 1. wiederholen <br> 2b. Kein Bild eingehängt <br> 2b.1 System meldet "Kein Bild gefunden" <br> 2b.2 User kann 1. wiederholen |
+| Owner | Oxana Zh / Karsten T |
+| Priority | Medium |
+
+#### UC-4.7 Wandsichtbarkeit ändern
+| Use Case ID: | UC-4.7 |
+| --| --|
+| Title: | Wandsichtbarkeit ändern |
+| Description: | User ändert Sichtbarkeit einer Wand |
+| Trigger | User setzt Sichtbarkeit der Wand |
+| Primary Actor | User |
+| Preconditions | User hat Menü "Meine Räume" geöffnet |
+| Postconditions | Sichtbarkeit der Wand wurde geändert |
+| Other Use Cases | UC-4 |
+| Main <br> Success Scenario: | 1. User wählt Wand aus Dropdown Menü <br> 2. User wählt Wandsichtbarkeit "visible/invisible" <br> 3. System ändert Wandsichtbarkeit |
+| Extensions | |
+| Owner | Oxana Zh / Karsten T |
+| Priority | Medium |
+
+
+### UC-5 sich in Raum bewegen
+| Use Case ID: | UC-5  |
+| --| --|
+| Title: |  sich in Raum bewegen |
+| Description: | User kann sich in dem Raum bewegen |
 | Trigger | - |
 | Primary Actor | User |
 | Preconditions | - |
 | Postconditions | User hat Position/Sicht verändert |
 | Other Use Cases | - |
-| Main <br> Success Scenario: | 1. User interagiert <br> 1a. User bewegt sich <br> 1b. User dreht die Kamera |
+| Main <br> Success Scenario: | 1. User interagiert: <br> - a User bewegt sich <br> - b User dreht die Kamera |
 | Extensions | -  |
 | Owner | Oxana Zh / Karsten T |
 | Priority | High |
 
-#### UC-2.1 Vor/Zurück/Links/Rechts
-| Use Case ID: | UC-2 .1 |
+#### UC-5.1 Vor/Zurück/Links/Rechts
+| Use Case ID: | UC-5.1 |
 | --| --|
 | Title: | Vor/Zurück/Links/Rechts |
-| Description: | User kann sich in der VR  Vor/Zurück/Links/Rechts bewegen |
+| Description: | User kann sich in dem Raum Vor/Zurück/Links/Rechts bewegen |
 | Trigger | WASD-Keys |
 | Primary Actor | User |
 | Preconditions | - |
 | Postconditions | User hat sich bewegt |
-| Other Use Cases | - |
+| Other Use Cases | UC-5 |
 | Main <br> Success Scenario: | 1a. User bewegt sich vorwärts <br> 1b. User bewegt sich rückwärts <br> 1c. User bewegt sich nach links <br> 1d. User bewegt sich nach rechts |
-| Extensions | 1a-d. User läuft gegen Wand/Objekt <br> - 1a-d.1 System verhindert Bewegung und blockiert den User  |
+| Extensions | 1a-d. User läuft gegen Wand/Objekt <br> - 1a-d.1 System verhindert Bewegung und blockiert den User |
 | Owner | Oxana Zh / Karsten T |
 | Priority | High |
 
-#### UC-2.2 Kamera drehen
-| Use Case ID: | UC-2 .2 |
+#### UC-5.2 Kamera drehen
+| Use Case ID: | UC-5.2 |
 | --| --|
 | Title: | Kamera drehen |
-| Description: | User kann seine Perspektive in der VR verändern |
+| Description: | User kann seine Perspektive in dem Raum verändern |
 | Trigger | Gedrückt gehaltene Maustaste / Sensoren der VR-Brille / Handy Sensoren |
 | Primary Actor | User |
 | Preconditions | - |
 | Postconditions | Perspektive hat sich verändert |
-| Other Use Cases | - |
+| Other Use Cases | UC-5 |
 | Main <br> Success Scenario: | 1. User hat die Kameraperspektive geändert |
-| Extensions | 1a. Kamera ist bockiert <br> - 1a.1 System weist User darauf hin und verändert Kamera schwenken  |
+| Extensions | 1a. Kamera ist blockiert <br> - 1a.1 System weist User darauf hin und verhindert Kamera schwenken  |
 | Owner | Oxana Zh / Karsten T |
 | Priority | High |
 
-#### UC-3 VR interaktion
-| Use Case ID: | UC-3 |
+#### UC-6 mit Multimedia-Objekten interagieren
+| Use Case ID: | UC-6 |
 | --| --|
-| Title: | VR interaktion |
-| Description: | User interagiert mit der VR|
+| Title: | mit MUltimedia-Objekten interagieren |
+| Description: | User interagiert mit den Objekten im Raum |
 | Trigger | - |
 | Primary Actor | User |
 | Preconditions | - |
-| Postconditions | VR reagiert |
+| Postconditions | Raum reagiert |
 | Other Use Cases | - |
-| Main <br> Success Scenario: | 1. User hat die Möglichkeit dazu ein: <br> - 1a. Media-File hochzuladen <br>  - 1b. Objekt zu platzieren <br> 1c. Objekt zu rotieren <br> 1d. Objekt zu löschen <br> 1e. Objekt zu skalieren  |
+| Main <br> Success Scenario: | 1. User hat die Möglichkeit dazu ein: <br> - 1a. Media-File hochzuladen <br>  - 1b. Objekt zu platzieren <br> 1c. Objekt zu rotieren <br> 1d. Objekt zu löschen <br> 1e. Objekt zu skalieren <br> 1f. Objekt zu bearbeiten  |
 | Extensions |  -  |
 | Owner | Oxana Zh / Karsten T |
 | Priority | High |
 
-#### UC-3.1 Media-File hochladen (Object, Audio, Video, Image, Text)
-| Use Case ID: | UC-3.1 |
+#### UC-6.1 Multimedia Objekt hochladen
+| Use Case ID: | UC-6.1 |
 | --| --|
-| Title: | Media-File hochladen (Object, Audio, Video, Image, Text) |
-| Description: | User lädt ein Media-File hoch <br> Media-File wird visualisiert |
+| Title: | Multimedia Objekt hochladen |
+| Description: | User lädt ein Multimedia-File hoch <br> Multimedia-File wird visualisiert |
 | Trigger | "Hochladen" Button mit eingehängtem Media-File |
 | Primary Actor | User |
 | Preconditions | - |
-| Postconditions | VR visualisiert neues Media-FIle inkl. Speicherung in DB |
-| Other Use Cases | - |
-| Main <br> Success Scenario: | 1. User klickt auf "Hochladen" <br> 2. System zeigt Upload-Fenster/Sektor <br> 3. User hängt Media-FIle ein <br> 4. User klickt auf "Hochladen" <br> 5. System speichert Media-FIle in DB und visualisiert neues Media-FIle  in der VR |
-| Extensions |  3a. Ungültiges Format <br> 3b. Zu große Datei <br> - 3a/b.1  System verwirft Datei <br> 5a. Keine Datei angehängt|
+| Postconditions | Raum visualisiert neues Multimedia-Objekt inkl. Speicherung in DB |
+| Other Use Cases | UC-6 |
+| Main <br> Success Scenario: | 1. User klickt auf "Hochladen" <br> 2. System zeigt Upload-Fenster/Sektor <br> 3. User hängt Media-FIle ein <br> 4. User klickt auf "Hochladen" <br> 5. System speichert Multimedia-FIle in DB und visualisiert neues Multimedia-FIle in dem Raum |
+| Extensions |  4a. Ungültiges Format <br> 4b. Zu große Datei <br> - 4a/b.1  System meldet "Ungültige Datei" verwirft Datei <br> 4a/b2. User kann 3. wiederholen <br> 4c. Keine Datei angehängt <br> 4c.1 System meldet "Keine Datei gefunden" <br> 4c.2 User kann 3. wiederholen |
 | Owner | Oxana Zh / Karsten T |
 | Priority | High |
 
-#### UC-3.2 Objekt platzieren
-| Use Case ID: | UC-3.2 |
+#### UC-6.2 Objekt platzieren
+| Use Case ID: | UC-6.2 |
 | --| --|
 | Title: | Objekt platzieren |
 | Description: | User verschiebt ein Objekt |
-| Trigger | User "zieht" Objekt in der VR |
+| Trigger | User "zieht" Objekt in dem Raum |
 | Primary Actor | User |
 | Preconditions | - |
 | Postconditions | Objekt ändert Position |
-| Other Use Cases | - |
+| Other Use Cases | UC-6 |
 | Main <br> Success Scenario: | 1. User hält Maus auf Objekt gedrückt <br>  2. User "zieht" Maus <br> 3. System visualisiert die Positionsänderung |
-| Extensions |  1a. Objekt ist statisch <br> - 1a.1 System highlighted unpositionierbares Objekt |
+| Extensions |  1a. Objekt ist statisch <br> - 1a.1 System highlighted Objekt als unpositionierbar |
 | Owner | Oxana Zh / Karsten T |
 | Priority | High |
 
-#### UC-3.3 Objekt rotieren
-| Use Case ID: | UC-3.3 |
+#### UC-6.3 Objekt rotieren
+| Use Case ID: | UC-6.3 |
 | --| --|
 | Title: | Objekt rotieren |
 | Description: | User rotiert ein Objekt |
-| Trigger | User "betrachtet Objekt und drückt entsprechende Taste |
+| Trigger | User betrachtet Objekt und drückt entsprechende Taste |
 | Primary Actor | User |
 | Preconditions | - |
 | Postconditions | Objekt ändert Rotation |
-| Other Use Cases | - |
+| Other Use Cases | UC-6 |
 | Main <br> Success Scenario: | 1. User betrachtet Objekt (Raycasting) 2. User drückt Rotationstaste 3. System rotiert Objekt entsprechend |
 | Extensions |  2a. Objekt ist statisch <br> 2a.1. System weist auf unrotierbares Objekt hin |
 | Owner | Oxana Zh / Karsten T |
 | Priority | High |
 
-#### UC-3.4 Objekt löschen
-| Use Case ID: | UC-3.4 |
+#### UC-6.4 Objekt löschen
+| Use Case ID: | UC-6.4 |
 | --| --|
 | Title: | Objekt löschen |
 | Description: | User löscht ein Objekt |
 | Trigger | User "betrachtet" Objekt und drückt entsprechende Taste |
 | Primary Actor | User |
 | Preconditions | - |
-| Postconditions | Objekt aus VR und DB entfernt |
-| Other Use Cases | - |
+| Postconditions | Objekt aus Raum und DB entfernt |
+| Other Use Cases | UC-6 |
 | Main <br> Success Scenario: | 1. User betrachtet Objekt (Raycasting) 2. User drückt Löschen-Taste 3. System löscht Objekt  |
 | Extensions |  2a. Objekt ist unlöschbar <br> 2a.1. System weist auf unlöschbares Objekt hin |
 | Owner | Oxana Zh / Karsten T |
 | Priority | High |
 
-#### UC-3.5 Objekt skalieren
-| Use Case ID: | UC-3.5 |
+#### UC-6.5 Objekt skalieren
+| Use Case ID: | UC-6.5 |
 | --| --|
 | Title: | Objekt skalieren |
 | Description: | User skaliert ein Objekt |
@@ -260,56 +360,12 @@ Das Produkt wird über das Internet angeboten. Dahinter verbirgt sich eine Clien
 | Primary Actor | User |
 | Preconditions | - |
 | Postconditions | Objekt skaliert groß/klein |
-| Other Use Cases | - |
+| Other Use Cases | UC-6 |
 | Main <br> Success Scenario: | 1. User betrachtet Objekt (Raycasting) <br> 2. User drückt Skaliertasten 3. System skaliert Objekt größer/kleiner |
 | Extensions |  2a. Objekt ist statisch <br> 2a.1. System weist auf unskalierbares Objekt hin |
 | Owner | Oxana Zh / Karsten T |
 | Priority | High |
 
-#### UC-4 VR andere User/Räume
-| Use Case ID: | UC-4 |
-| --| --|
-| Title: | VR andere User/Räume |
-| Description: | User besucht/verändert VR-Raum eines anderen Users |
-| Trigger | "VR betreten" |
-| Primary Actor | User |
-| Preconditions | Raum ist geteilt UC-1.3  |
-| Postconditions | -  |
-| Other Use Cases | UC-1.3 |
-| Main <br> Success Scenario: | 1. User drückt "VR-betreten" seiner ihm geteilten VR-Räume <br> 2a. User besucht VR-Raum <br> 2b. User besucht und verändert VR-Raum |
-| Extensions |  - |
-| Owner | Oxana Zh / Karsten T |
-| Priority | Medium |
-
-#### UC-4.1 VR besuchen
-| Use Case ID: | UC-4.1 |
-| --| --|
-| Title: | VR besuchen |
-| Description: | User besucht VR-Raum eines anderen Users |
-| Trigger | "VR betreten" |
-| Primary Actor | User |
-| Preconditions | Raum ist geteilt UC-1.3  |
-| Postconditions | -  |
-| Other Use Cases | UC-1.3 |
-| Main <br> Success Scenario: | 1. User drückt "VR-betreten" seiner ihm geteilten VR-Räume <br> 2. User besucht VR-Raum |
-| Extensions |  2a. User versucht mit Objekten zu interagieren <br> 2a.1 System verhindert Interaktion |
-| Owner | Oxana Zh / Karsten T |
-| Priority | Medium |
-
-#### UC-4.2 VR verändern
-| Use Case ID: | UC-4.2 |
-| --| --|
-| Title: | VR verändern |
-| Description: | User verändert VR-Raum eines anderen Users |
-| Trigger | "VR betreten" |
-| Primary Actor | User |
-| Preconditions | Raum ist geteilt UC-1.3  |
-| Postconditions | -  |
-| Other Use Cases | UC-1.3 |
-| Main <br> Success Scenario: | 1. User drückt "VR-betreten" seiner ihm geteilten VR-Räume <br> 2. User besucht VR-Raum <br> 3. User interagiert mit Objekten und verändert den Raum <br> 4. System übernimmt Änderungen |
-| Extensions |  3a. Ungültige Veränderungen bspw. statischer Objekte |
-| Owner | Oxana Zh / Karsten T |
-| Priority | Low |
 
 ## 4. Produktdaten
 Langfristig müssen folgende Produktdaten im System gespeichert werden:
