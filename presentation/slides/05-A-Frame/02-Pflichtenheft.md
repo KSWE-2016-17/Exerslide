@@ -382,3 +382,8 @@ Internetanschluss
 
 ## 6. Verwendete Technologien
 JavaScript, AFrame, MongoDB, HTML, CSS  
+
+## 8. Benutzungsoberfläche
+<figure id="imgUCmms">
+  <img src="./images/Mockup.png"/>
+</figure>
