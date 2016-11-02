@@ -18,26 +18,37 @@ id: AR-Pflichtenheft
 
 ## Use-Case-Diagramm
 
+<br></br>
 ### Gesamtsystem
 ![Use Case System](./images/usecases/System.png "System")
 
+<br></br>
 ### Inventar
 ![Use Case Inventar](./images/usecases/Inventar.png "Inventar")
 
-
+<br></br>
 ## Mockups
 
+<br></br>
 ### Begrüßungsbildschirm
 ![Greeting View](./images/mockups/GreetingView.png "Greeting View")
 
+<br></br>
 ### Hauptansicht
 ![Main Screen](./images/mockups/mainscreen.png "Main Screen")
 
+<br></br>
 ### Inventar
 ![Inventar](./images/mockups/InventarOpen.png "Inventar")
 
+<br></br>
 ### Items kombinieren
 ![Item combining](./images/mockups/ItemCombining.png "Item combining")
 
-### Item kombinert
+<br></br>
+### Items kombiniert
 ![Item combined](./images/mockups/ItemsCombined.png "Item combined")
+
+<br></br>
+### Navigationsübergänge
+![Item combined](./images/navigation/navigation.png "Item combined")
