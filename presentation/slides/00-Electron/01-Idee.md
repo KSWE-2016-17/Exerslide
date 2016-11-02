@@ -35,4 +35,4 @@ Am Ende einer Runde müssen alle Spieler Karten vom Deck ziehen, bis jeder wiede
 
 Das Spiel endet, wenn nur noch ein Spieler Karten auf der Hand hat. Dieser ist der Verlierer, der Durak, und muss neu mischen und austeilen und muss zunächst überbieten. Spielt bei der letzten Runde jeder Spieler alle verbleibenden Karten aus, gibt es ein Unentschieden.
 
-###### Quelle: [Wikipedia](http://electron.atom.io)
+###### Quelle: [Wikipedia](https://de.wikipedia.org/wiki/Durak_(Kartenspiel))
