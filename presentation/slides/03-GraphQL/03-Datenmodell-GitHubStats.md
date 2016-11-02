@@ -1,5 +1,5 @@
 ---
-title: GitHubStats Datenmodel
+title: GitHubStats Datenmodell
 ---
 
 Lokal wird keine Datenbank oder ähnliches eingesetzt, es wird nur die Schnittstelle von GitHub genutzt. Im folgenden sind die tatsächlich genutzten Ausschnitte zu sehen.
