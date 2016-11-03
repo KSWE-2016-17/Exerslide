@@ -3,7 +3,7 @@ title: Datenstruktur
 chapter: Datenstruktur
 id: datenstruktur
 ---
-# Verwendete Datenbank: MmongoDB
+# Verwendete Datenbank: MongoDB
 MongoDB ist eine Open-Source NoSQL Datenbank. Es handelt sich um eine performance-orientierte und einfach skalierbare cross-plattform Datenbank. Im gegensatz zur SQL Datenbak ist diese Dokumentorientiert, d.h. hier werden keine Schemas und Tabellen für gespeicherte Daten verwendet, stattdessen aber Collections mit Datenbankeinträgen, die jeder als ein separates Dokument dargestellt und gespeichert werden.
 Jedes Dokument besteht aus key-value Paaren und hat dynamische Schemas, d.h. Dokumente in der selben Collection haben
 keine festgelegte Struktur und müssen nicht gleiche Felder und Datentypen beinhalten. Jedes Dokument in der Datenbank hat eine id (Primär Key), der automatisch beim Speichern des Eintrags generiert wird. Jedes Dokument kann beliebig viele eingebettete Dokumente beinhalten.
