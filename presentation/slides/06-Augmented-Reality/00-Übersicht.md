@@ -12,5 +12,8 @@ Unter erweiterter Realität (auch englisch augmented reality [ɔːɡˈmɛntɪd �
 
 ### Verwendete Bibliothekten:
 * [ArgonJS](http://argonjs.io/)
+* [A-Frame](https://aframe.io/)
+* [ArgonJS A-Frame](https://github.com/argonjs/argon-aframe)
+* [ThreeJS](https://threejs.org/)
 * [ExpressJS](http://expressjs.com/) (API)
 * [MongoDB](https://www.mongodb.com/de) / [Azure Tables](https://azure.microsoft.com/en-us/services/storage/tables/)
