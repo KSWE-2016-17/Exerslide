@@ -4,7 +4,6 @@
   "description": "",
   "private": true,
   "scripts": {
-    "prebuild": "npm -s i",
     "build": "exerslide build"
   },
   "dependencies": {
