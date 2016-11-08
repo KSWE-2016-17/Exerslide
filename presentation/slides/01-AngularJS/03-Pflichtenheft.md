@@ -41,10 +41,25 @@ Webbrowser
 
 ## 3        Produktübersicht
  
- Use Case Diagram
+### 3.1 Use Case Diagramme
+HomeScreen
+ <figure id="UC01">
+  <img src="./images/Home.png"/>
+</figure>
+
+SearchScreen
+ <figure id="UC02">
+  <img src="./images/Search.png"/>
+</figure>#
+
+DetailScreen
+ <figure id="UC03">
+  <img src="./images/DetailUC.png"/>
+</figure>
 
 ## 4        Produktfunktionen
-Use Cases
+
+### 4.1 Use Case
 
 ## 5        Produktdaten
 - Medium zuletzt aufgerufen um: Zeitstempel
