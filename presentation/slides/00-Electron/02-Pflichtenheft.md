@@ -49,7 +49,7 @@ Da das Electron Framework verwendet wird und es sich hierbei um eine webbasierte
   * Mac – 64 Bit Intel Prozessor
   * Linux – Intel Pentium 4 Prozessor
 
-# 3 User Stroies
+# 3 User Stories
   * Ich möchte als Benutzer eine Partie gegen Computer Gegner spielen, so dass ich zu jederzeit eine Runde spielen kann, auch wenn kein Menschlicher Spieler verfügbar ist
   * Ich möchte als Benutzer eine online Übersicht an verfügbaren Servern einsehen können, so dass ich ggf. mit Freunden spielen kann
   * Ich möchte als Benutzer einem befreundetem Benutzer folgen können, sodass ich benachritigt werde sobald er online ist
@@ -67,24 +67,52 @@ Da das Electron Framework verwendet wird und es sich hierbei um eine webbasierte
   * Ich als Benutzer möchte Einzelspiele neustarten können, so dass ich das Spiel nicht zu Ende spielen muss
   * Ich als Benutzer möchte die Anwendung im Hintergrund laufen lassen, so dass ich benachrichtig werde, sobald mich jemand zu einer Partie einlädt.
 
-# 4 Mockups
+## 4.1 Mockups
 ## Startseite
-![picture](./mockups/Startseite.png)
+![picture](./img/MockUp_Startseite.png)
 
 ## Einzelspieler
-![picture](./mockups/Singleplayer.png)
+![picture](./img/MockUp_Singleplayer.png)
 
 ## Multiplayer Räume
-![picture](./mockups/Multiplayer.png)
+![picture](./img/MockUp_Multiplayer.png)
 
 ## Multiplayer Raum erstellen
-![picture](./mockups/Multiplayer Popup.png)
+![picture](./img/MockUp_Multiplayer Popup.png)
 
 ## Spielfeld
-![picture](./mockups/Spielfeld.png)
+![picture](./img/MockUp_Spielfeld.png)
 
 ## Freunde
-![picture](./mockups/Freunde.png)
+![picture](./img/MockUp_Freunde.png)
 
 ## Notification
-![picture](./mockups/Notification.png)
+![picture](./img/MockUp_Notification.png)
+
+# 4 Navigation
+## Navigation
+![picture](./img/Navigation.png)
+*Fett- und unterstrichen- markierte Blase = Einstiegspunkt
+
+# 5 Use-Case-Diagramme
+
+## Gesamtsystem
+![picture](./img/UseCase_1 - Durak.png)
+
+## Einzelspielerkonfiguration
+![picture](./img/UseCase_2 - Einzelspielerkonfiguration.png)
+
+## Kontoverwaltung
+![picture](./img/UseCase_3 - Kontoverwaltung.png)
+
+## Spielsystem
+![picture](./img/UseCase_4 - Spielsystem.png)
+
+## Chatsystem
+![picture](./img/UseCase_5 - Chatsystem.png)
+
+## Mehrspielerkonfiguration
+![picture](./img/UseCase_6 - Mehrspielerkonfiguration.png)
+
+## Raumerstellung
+![picture](./img/UseCase_7 - Raumerstellung.png)
