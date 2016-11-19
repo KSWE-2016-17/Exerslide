@@ -21,6 +21,7 @@ Vergleich RDBMS und MongoDB:
 # Unsere Datenstruktur
 
 3 Collections - USER, ROOM, MEDIAFILE
+
 Diese halten weitere Objekte innerhalb ihres Dokuments.
 Dadurch können beispielsweise Mediafiles über ein Mediaobject in seinen VR-Attributen verwaltet werden (Position etc.).
 Somit ist es möglich ein Mediafile in mehreren Räumen unterschiedlich zu platzieren.
@@ -47,15 +48,15 @@ Somit ist es möglich ein Mediafile in mehreren Räumen unterschiedlich zu platz
 | fieldname | type |
 | :-- | :-- |
 |  id | Object ID |
-| src | String |
-| type | String |
+| user_id | Object ID |
+| src | Object ID |
+| mimetype | String |
 
-======
 
-###mediaobject
+
+### mediaobject
 | fieldname | type |
 | :--- | :---- |
-| position 	 | Object position |
 | position | Object position |
 | width | Double |
 | height | Double |
@@ -64,7 +65,7 @@ Somit ist es möglich ein Mediafile in mehreren Räumen unterschiedlich zu platz
 | scale | Object position |
 | color | String |
 | visible | Boolean |
-| mediafile | Object ID |
+| mediafile | Object mediafile |
 
 ### wall
 | fieldname | type |
