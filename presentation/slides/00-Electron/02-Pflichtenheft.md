@@ -78,7 +78,7 @@ Da das Electron Framework verwendet wird und es sich hierbei um eine webbasierte
 ![picture](./img/MockUp_Multiplayer.png)
 
 ## Multiplayer Raum erstellen
-![picture](./img/MockUp_Multiplayer Popup.png)
+![picture](./img/MockUp_Multiplayer%20-%20Popup.png)
 
 ## Spielfeld
 ![picture](./img/MockUp_Spielfeld.png)
@@ -97,22 +97,22 @@ Da das Electron Framework verwendet wird und es sich hierbei um eine webbasierte
 # 5 Use-Case-Diagramme
 
 ## Gesamtsystem
-![picture](./img/UseCase_1 - Durak.png)
+![picture](./img/UseCase_1%20-%20Durak.png)
 
 ## Einzelspielerkonfiguration
-![picture](./img/UseCase_2 - Einzelspielerkonfiguration.png)
+![picture](./img/UseCase_2%20-%20Einzelspielerkonfiguration.png)
 
 ## Kontoverwaltung
-![picture](./img/UseCase_3 - Kontoverwaltung.png)
+![picture](./img/UseCase_3%20-%20Kontoverwaltung.png)
 
 ## Spielsystem
-![picture](./img/UseCase_4 - Spielsystem.png)
+![picture](./img/UseCase_4%20-%20Spielsystem.png)
 
 ## Chatsystem
-![picture](./img/UseCase_5 - Chatsystem.png)
+![picture](./img/UseCase_5%20-%20Chatsystem.png)
 
 ## Mehrspielerkonfiguration
-![picture](./img/UseCase_6 - Mehrspielerkonfiguration.png)
+![picture](./img/UseCase_6%20-%20Mehrspielerkonfiguration.png)
 
 ## Raumerstellung
-![picture](./img/UseCase_7 - Raumerstellung.png)
+![picture](./img/UseCase_7%20-%20Raumerstellung.png)
