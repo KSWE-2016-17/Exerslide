@@ -68,4 +68,3 @@ chapter: TinyTask
 <figure id="chat">
   <img src="./images/Chat.png">
 </figure>
-
