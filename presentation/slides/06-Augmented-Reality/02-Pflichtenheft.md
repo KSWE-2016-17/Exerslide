@@ -51,4 +51,4 @@ id: AR-Pflichtenheft
 
 <br></br>
 ### Navigationsübergänge
-![Item combined](./images/navigation/navigation.png "Navigation transition")
+![Item combined](./images/navigation/navigation.png "Item combined")

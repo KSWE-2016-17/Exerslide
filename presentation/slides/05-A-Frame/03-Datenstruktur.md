@@ -20,6 +20,12 @@ Vergleich RDBMS und MongoDB:
 
 # Unsere Datenstruktur
 
+3 Collections - USER, ROOM, MEDIAFILE
+
+Diese halten weitere Objekte innerhalb ihres Dokuments.
+Dadurch können beispielsweise Mediafiles über ein Mediaobject in seinen VR-Attributen verwaltet werden (Position etc.).
+Somit ist es möglich ein Mediafile in mehreren Räumen unterschiedlich zu platzieren.
+
 ## user
 | fieldname | type |
 | :--- | :---- |
@@ -36,7 +42,30 @@ Vergleich RDBMS und MongoDB:
 | walls | Array: Object wall |
 | sky | Object mediafile |
 | light | Obect light |
-| media | Array: Object ID |
+| mediaobject | Array: Object ID |
+
+##  mediafile
+| fieldname | type |
+| :-- | :-- |
+|  id | Object ID |
+| user_id | Object ID |
+| src | Object ID |
+| mimetype | String |
+
+
+
+### mediaobject
+| fieldname | type |
+| :--- | :---- |
+| position | Object position |
+| width | Double |
+| height | Double |
+| depth | Double |
+| rotation | Object position |
+| scale | Object position |
+| color | String |
+| visible | Boolean |
+| mediafile | Object mediafile |
 
 ### wall
 | fieldname | type |
@@ -66,17 +95,4 @@ Vergleich RDBMS und MongoDB:
 | intensity | Double |
 | type | String |
 
-##  mediafile
-| fieldname | type |
-| :-- | :-- |
-|  id | Object ID |
-| src | String |
-| type | String |
-| position | Object position |
-| width | Double |
-| height | Double |
-| depth | Double |
-| rotation | Object position |
-| scale | Object position |
-| color | String |
-| visible | Boolean |
+
