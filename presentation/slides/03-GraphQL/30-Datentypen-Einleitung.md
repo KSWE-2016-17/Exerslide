@@ -9,7 +9,7 @@ type Character {
 }
 ```
 
-GraphQL baut sich durch Typen und ihre Beziehungen untereinander auf.
+GraphQL baut sich durch Typen und ihre Beziehungen untereinander auf.<br>
 Der Typ `Character` hat zwei Felder:
 
 - `name` vom Typ String.
