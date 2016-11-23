@@ -67,7 +67,7 @@ Da das Electron Framework verwendet wird und es sich hierbei um eine webbasierte
   * Ich als Benutzer möchte Einzelspiele neustarten können, so dass ich das Spiel nicht zu Ende spielen muss
   * Ich als Benutzer möchte die Anwendung im Hintergrund laufen lassen, so dass ich benachrichtig werde, sobald mich jemand zu einer Partie einlädt.
 
-## 4.1 Mockups
+# 4 Mockups
 ## Startseite
 ![picture](./img/MockUp_Startseite.png)
 
