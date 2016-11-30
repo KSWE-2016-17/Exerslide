@@ -1,5 +1,5 @@
 ---
-title: Dokumentation
+title: Durak Datenmodell
 chapter: Dokumentation
 id: ETN_Dokumentation
 ---
