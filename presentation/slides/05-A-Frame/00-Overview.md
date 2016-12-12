@@ -3,26 +3,7 @@ title: Overview
 chapter: A-Frame
 ---
 ## Projekt: [MyMemorySpace](https://github.com/oxanaZh/MyMemorySpace.git)
-
-
-### Was ist [A-Frame](https://aframe.io/)?
-A-Frame ist ein Web Framework um die Virtual Reality in den Webbrowser zu bringen.
-Es werden Desktop und mobile Plattformen unterstützt sowie VR-Brillen.
-A-Frame nutzt dafür HTML sowie das Entity-Component-System.
-
-Durch das Entity-Component-System können Entities einfach eingefügt und in
-ihrem Verhalten und Aussehen verändert werden. Diese können um Components
-erweitert werden was zusätzliche Funktionalitäten ermöglicht. Dadurch können
-Entities viele verschiedene Eigenschaften besitzen die von anderen Components
-beigesteuert werden.
-
-A-Frame wird vom Mozilla-VR-Team entwickelt und richtet sich an die Web-Entwickler
-die mit dem Framework VR ins Web bringen sollen. Die sogenannten A-Frame Scenes
-können mittels DOM interaktiv manipuliert werden und funktionieren folglich
-wie bekannte Technologien der Web-Entwickler.
-
-A-Frame ist aktuell in der Version 0.3.0 verfügbar und wird durch die Community
-stetig erweitert und gefördert.
+### Über das Projekt
 
 ## Dokumentation: A-FRAME
 
@@ -55,8 +36,6 @@ Headsets
 * Sony VR (Sony)
 * Occulus Rift
 
-#### Projekt-Auswahl
-
 Technologien
 * A-FRAME (Web-VR)
 * React-VR (Web-VR)
@@ -70,11 +49,21 @@ Entertainment
 
 #### 3.1 Was ist A-FRAME?
 
-A-Frame ist ein Web Framework um die Virtual Reality in den Webbrowser zu bringen. Es werden Desktop und mobile Plattformen unterstützt sowie VR-Brillen. A-Frame nutzt dafür HTML sowie das Entity-Component-System.
+[A-Frame](https://aframe.io/) ist ein Web Framework um die Virtual Reality in den Webbrowser zu bringen. Es werden Desktop und mobile Plattformen unterstützt sowie VR-Brillen. A-Frame nutzt dafür HTML sowie das Entity-Component-System.
 
 Durch das Entity-Component-System können Entities einfach eingefügt und in ihrem Verhalten und Aussehen verändert werden. Diese können um Components erweitert werden was zusätzliche Funktionalitäten ermöglicht. Dadurch können Entities viele verschiedene Eigenschaften besitzen die von anderen Components beigesteuert werden.
 
 A-Frame ist aktuell in der Version 0.3.0 verfügbar und wird durch die Community stetig erweitert und gefördert.
+
+Beilsiel:
+~~~
+<body>
+  <a-scene>
+    <a-box color="#6173F4" opacity="0.8" depth="2"></a-box>
+    <a-sphere radius="2" src="texture.png" position="1 1 0"></a-sphere>
+  </a-scene>
+</body>
+~~~
 
 #### 3.2 An wen richtet sich A-FRAME?
 
@@ -82,7 +71,7 @@ A-Frame wird vom Mozilla-VR-Team entwickelt und richtet sich an die Web-Entwickl
 
 #### 3.3 Wie funktioniert A-FRAME?
 
-A-Frame basiert auf THREE.js. Einer Cross-Browser Javascript API mit der man 3D Grafiken/Animationen
+A-Frame basiert auf [THREE.js](https://threejs.org/). Einer Cross-Browser Javascript API mit der man 3D Grafiken/Animationen
 im Web Browser visualisieren kann. THREE.js basiert dabei auf WebGL.
 
 A-Frame nutzt HTML um Szenerien zu visualisieren. Zusätzlich wird das Entity-Component-System
