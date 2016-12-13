@@ -79,7 +79,45 @@ leicht über DOM nutzbar (s. 3.3.5).
 
 ##### 3.3.1 Konzept
 
+A-Frame kann über die bekannten Wege initialisiert und in das eigene Projekt eingebunden werden.
+
+Variante 1) Das JS-Script in der Minified-Version in seine HTML-Page einbetten.
+Optional kann man das Script auch runterladen. Die offizielle Version kann hier
+gefunden werden: [A-FRAME 0.3.2 min](https://aframe.io/releases/0.3.2/aframe.min.js)
+
+Variante 2) Über NPM. `npm install --save aframe`
+
+Stable Versions sind somit unter folgendem Link zu finden [A-FRAME npm](https://www.npmjs.com/package/aframe)
+
+Im Source Code nun das Modul einbinden.
+
+`require('aframe');`
+
+
+A-FRAME ist nun initialisiert.
+
 ##### 3.3.2 Erste A-Scene: Nur HTML
+
+A-FRAME Objekte werden erst sichtbar wenn sie einer Szene inneliegen.
+
+`<a-scene></a-scene>`
+
+Innerhalb dieser Szene können nun Objekte eingefügt werden. Die VR ist ein
+klassischer 3D-Raum in dem ihr über die X,Y,Z Koordinaten Objekte einfügen könnt.
+
+Fügen wir nun ein Objekt ein um die Szene nicht leer zu lassen.
+
+```
+<a-scene>
+  <a-box color="#6173F4" width="4" height="10" depth="2"></a-box>
+</a-scene>
+```
+
+Eine Box ist wie der Name schon angibt ein 3D Rechteck. Über die HTML-Attribute kann man der Box Eigenschaften zutragen. Farbe, Form, Sichtbarkeit, je nachdem
+welche Funktionen man von A-FRAME selber oder Fremd-Plugins nutzen möchte.
+
+`width, height, depth` geben die Maße in Breite, Höhe, Tiefe an.
+
 
 ##### 3.3.3 Interaktion mit Objekten
 
