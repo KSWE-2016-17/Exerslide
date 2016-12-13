@@ -187,15 +187,4 @@ Mehr zu [Licht](https://aframe.io/docs/0.3.0/components/light.html)
 
 Als letztes fügen wir einen Himmel unserer Szene hinzu. Bei der Auswahl des Bildes sollte darauf geachtet werden, dass das Bild über die gesamte Szene gespannt wird. Es wird also wie um eine Kugel gewickelt. Folglich sind Bilder mit schwarzen Rändern, in niedriger Auflösung, oder mit zu deutlichen Motiven unvorteilhaft da die Ränder des Bildes zu deutlich werden.
 
-Mehr zu [Sky](https://aframe.io/docs/0.3.0/primitives/a-sky.html)
-
-
-##### 3.3.3 Interaktion mit Objekten
-
-##### 3.3.4 Asset-Management-System
-
-##### 3.3.5 Entity-Component-System
-
-##### 3.3.6 Wichtige/Nützliche Components
-
 #### 3.4 Ausblick

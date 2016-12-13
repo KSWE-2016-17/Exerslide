@@ -19,3 +19,5 @@ presentation framework.
 - Run `npm install`.
 - Run either `exerslide serve` for a debug-presentation or `exerslide build` for
   a release-presentation.
+
+Visit: https://kswe-2016-17.github.io/Exerslide/
