@@ -98,12 +98,20 @@ A-FRAME ist nun initialisiert.
 
 ##### 3.3.2 Erste A-Scene: Nur HTML
 
+**Szene**
+
 A-FRAME Objekte werden erst sichtbar wenn sie einer Szene inneliegen.
 
 `<a-scene></a-scene>`
 
 Innerhalb dieser Szene können nun Objekte eingefügt werden. Die VR ist ein
 klassischer 3D-Raum in dem ihr über die X,Y,Z Koordinaten Objekte einfügen könnt.
+
+Die Szene bildet dabei ein eigenes Entity ab. Folglich kann die Scene über Attribute manipuliert werden wie die folgenden Entities.
+
+Mehr zur [A-Scene](https://aframe.io/docs/0.3.0/core/scene.html)
+
+**Box-Model**
 
 Fügen wir nun ein Objekt ein um die Szene nicht leer zu lassen.
 
@@ -116,7 +124,70 @@ Fügen wir nun ein Objekt ein um die Szene nicht leer zu lassen.
 Eine Box ist wie der Name schon angibt ein 3D Rechteck. Über die HTML-Attribute kann man der Box Eigenschaften zutragen. Farbe, Form, Sichtbarkeit, je nachdem
 welche Funktionen man von A-FRAME selber oder Fremd-Plugins nutzen möchte.
 
-`width, height, depth` geben die Maße in Breite, Höhe, Tiefe an.
+`width, height, depth` geben beispielsweise die Maße in Breite, Höhe, Tiefe an.
+
+Weitere wichtige Attribute sind beispielsweise
+
+* Position `position="3 2 5"`
+* Rotation `rotation="90 0 45"`
+* Color    `color="#FFFFFF"`
+
+**Animation**
+
+Die Box kann nun in seinem Verhalten verändert werden. Beispielsweise können wir die Box animieren, zum Beispiel in der Farbe.
+
+```
+<a-box width="4" height="10" depth="2">
+  <a-animation attribute="material.color" from="white" to="red" dur="1000"></a-animation>
+</a-box>
+```
+
+Die Box erhält als Child ein Entity dass vom A-FRAME Typ `animation` ist. Mittels `animation` lassen sich Entities in ihrem Verhalten animieren.
+
+Die Animationen sind nützlich für vordefinierte Szenerien bei denen mehr Bewegung in die Szene kommen soll.
+
+Mehr zu [Animationen](https://aframe.io/docs/0.3.0/core/animations.html)
+
+**Licht**
+
+Als nächstes kann die Szene beleuchtet werden. Eine Szene ist zu Beginn immer beleuchtet, nach hinzufügen von Lichtern werden die Start-Lichter jedoch entfernt.
+
+Lichter lassen sich wie normale Entities hinzufügen.
+
+`<a-light type="point" color="#AAA" position="0 5 0"></a-light>`
+
+Dabei hält ein Licht je nach Typ verschiedene Attribute. Je nach Typ können oder
+können nicht Position, Richtung, Intensität, Farbe, usw. übergeben werden.
+
+Der Typ legt folglich die Art des Lichtes fest.
+
+Es gibt folgende Typen:
+
+* Ambient
+  - wirken global
+  - besitzen keine Positions, Rotations und Skalierungswerte
+  - sind unverzichtbar da ohne Ambient Light die Szene schnell zu dunkel wird
+* Directional (wie: Sonne)
+* Hemisphere
+  - wie *Ambient* aber mit 2 Farben
+  - Licht von oben und unten
+* Point (wie: Glühbirne)
+* Spot (wie: Scheinwerfer)
+  - werfen Licht in eine Richtung
+
+Mehr zu [Licht](https://aframe.io/docs/0.3.0/components/light.html)
+
+**Himmel**
+
+`<a-sky color="#73F7DD"></a-sky>`
+
+Über den Asset-Manager können Bilder geladen werden.
+
+`<a-sky src="Asset-ID"></a-sky>`
+
+Als letztes fügen wir einen Himmel unserer Szene hinzu. Bei der Auswahl des Bildes sollte darauf geachtet werden, dass das Bild über die gesamte Szene gespannt wird. Es wird also wie um eine Kugel gewickelt. Folglich sind Bilder mit schwarzen Rändern, in niedriger Auflösung, oder mit zu deutlichen Motiven unvorteilhaft da die Ränder des Bildes zu deutlich werden.
+
+Mehr zu [Sky](https://aframe.io/docs/0.3.0/primitives/a-sky.html)
 
 
 ##### 3.3.3 Interaktion mit Objekten
