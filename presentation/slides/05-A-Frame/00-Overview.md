@@ -102,7 +102,9 @@ A-FRAME ist nun initialisiert.
 
 A-FRAME Objekte werden erst sichtbar wenn sie einer Szene inneliegen.
 
-`<a-scene></a-scene>`
+```html
+<a-scene></a-scene>
+```
 
 Innerhalb dieser Szene können nun Objekte eingefügt werden. Die VR ist ein
 klassischer 3D-Raum in dem ihr über die X,Y,Z Koordinaten Objekte einfügen könnt.
@@ -115,7 +117,7 @@ Mehr zur [A-Scene](https://aframe.io/docs/0.3.0/core/scene.html)
 
 Fügen wir nun ein Objekt ein um die Szene nicht leer zu lassen.
 
-```
+```html
 <a-scene>
   <a-box color="#6173F4" width="4" height="10" depth="2"></a-box>
 </a-scene>
@@ -136,7 +138,7 @@ Weitere wichtige Attribute sind beispielsweise
 
 Die Box kann nun in seinem Verhalten verändert werden. Beispielsweise können wir die Box animieren, zum Beispiel in der Farbe.
 
-```
+```html
 <a-box width="4" height="10" depth="2">
   <a-animation attribute="material.color" from="white" to="red" dur="1000"></a-animation>
 </a-box>
@@ -154,7 +156,9 @@ Als nächstes kann die Szene beleuchtet werden. Eine Szene ist zu Beginn immer b
 
 Lichter lassen sich wie normale Entities hinzufügen.
 
-`<a-light type="point" color="#AAA" position="0 5 0"></a-light>`
+```html
+<a-light type="point" color="#AAA" position="0 5 0"></a-light>
+```
 
 Dabei hält ein Licht je nach Typ verschiedene Attribute. Je nach Typ können oder
 können nicht Position, Richtung, Intensität, Farbe, usw. übergeben werden.
@@ -179,11 +183,13 @@ Mehr zu [Licht](https://aframe.io/docs/0.3.0/components/light.html)
 
 **Himmel**
 
-`<a-sky color="#73F7DD"></a-sky>`
+```html
+<a-sky color="#73F7DD"></a-sky>```
 
 Über den Asset-Manager können Bilder geladen werden.
 
-`<a-sky src="Asset-ID"></a-sky>`
+```html
+<a-sky src="Asset-ID"></a-sky>```
 
 Als letztes fügen wir einen Himmel unserer Szene hinzu. Bei der Auswahl des Bildes sollte darauf geachtet werden, dass das Bild über die gesamte Szene gespannt wird. Es wird also wie um eine Kugel gewickelt. Folglich sind Bilder mit schwarzen Rändern, in niedriger Auflösung, oder mit zu deutlichen Motiven unvorteilhaft da die Ränder des Bildes zu deutlich werden.
 
