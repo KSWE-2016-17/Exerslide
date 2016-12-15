@@ -404,6 +404,10 @@ Die Ordnung der eingebundenen Mixins spielt eine Rolle wenn die Mixins die selbe
 
 Das Resultat ist ein grüner Würfel.
 
+<figure id="imgGreenCube">
+  <img src="./images/greencube.png" width="200" height="200"/>
+</figure>
+
 Die Reihenfolge der eingebunden Mixins spielt also eine tragende wenn Eigenschaften wiederholt definiert werden.
 
 Reihenfolge
