@@ -129,6 +129,11 @@ A-FRAME Objekte werden erst sichtbar wenn sie einer Szene inneliegen.
 Innerhalb dieser Szene können nun Objekte eingefügt werden. Die VR ist ein
 klassischer 3D-Raum in dem ihr über die X,Y,Z Koordinaten Objekte einfügen könnt.
 
+Die Kooredinatensystem in A-Frame sieht folglih aus:
+<figure id="imgCompOverInher">
+  <img src="./images/Coordinates.png"/>
+</figure>
+
 Die Szene bildet dabei ein eigenes Entity ab. Folglich kann die Scene über Attribute manipuliert werden wie die folgenden Entities.
 
 Mehr zur [A-Scene](https://aframe.io/docs/0.3.0/core/scene.html)
@@ -221,10 +226,12 @@ entity.addEventListener('child-attached', function (evt) {
 
 <hr>
 
- Über die HTML-Attribute kann man der Box Eigenschaften (Components) zutragen. Farbe, Form, Sichtbarkeit, je nachdem
+**Attribute**
+
+Über die HTML-Attribute kann man der Box Eigenschaften (Components) zutragen. Farbe, Form, Sichtbarkeit, je nachdem
 welche Funktionen man von A-FRAME selber oder Fremd-Plugins nutzen möchte.
 
-`width, height, depth` geben beispielsweise die Maße in Breite, Höhe, Tiefe an.
+`width, height, depth` geben beispielsweise die Maße in Breite (x-Achse), Höhe(y-Achse), Tiefe(z-Achse) an.
 
 Weitere wichtige Attribute sind beispielsweise
 
