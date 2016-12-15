@@ -338,10 +338,78 @@ Diese Assets können dann innerhalb der Scene Entities benutzt werden.
 </a-scene>
 ```
 
+##### 3.3.6 Mixins
 
+Mixins bieten die Möglichkeit mehrere Components zusammenzufassen und wiederzuverwenden (Sammelbecken von Components). Sie werden im Asset-Management-System über das `<a-mixin></a-mixin>` Element eingebunden. Entities die das Mixin einbinden enthalten folglich die Eigenschaften der Mixin-Components.
 
-##### 3.3.6 Wichtige/Nützliche Components
+```html
+<a-scene>
+  <a-assets>
+    <a-mixin id="red" material="color: red"></a-mixin>
+    <a-mixin id="blue" material="color: blue"></a-mixin>
+    <a-mixin id="cube" geometry="primitive: box"></a-mixin>
+  </a-assets>
+  <a-entity mixin="red cube"></a-entity>
+  <a-entity mixin="blue cube"></a-entity>
+</a-scene>
+```
 
-##### 3.4 Ausblick
+Das 1. Entity überinmmt die Eigenschaften von `red` und `cube`, in dieser Reihenfolge.
+
+Das 2. Entity würde sich ohne Mixin wie folgt schreiben.
+
+```html
+<a-entity material="color: blue" geometry="primitive: box"></a-entity>
+```
+
+Eigenschaften eines Multi-Property (z.B. ` geometry="primitive: box; width: 1; height: 1; depth: 1"`) mischen sich wenn sie von mehreren Mixins und/oder mit dem Entity definiert werden.
+
+```html
+<a-scene>
+  <a-assets>
+    <a-mixin id="box" geometry="primitive: box"></a-mixin>
+    <a-mixin id="tall" geometry="height: 10"></a-mixin>
+    <a-mixin id="wide" geometry="width: 10"></a-mixin>
+  </a-assets>
+  <a-entity mixin="wide tall box" geometry="depth: 2"></a-entity>
+</a-scene>
+```
+
+Das Entity bindet hier alle Mixins ein und definiert seine eigene Tiefe ( _depth_ ). Zusammengesetzt sieht das Entity wie folgt aus:
+
+```html
+<a-entity geometry="primitive: box; height: 10; depth: 2; width: 10"></a-entity>
+```
+
+Die Ordnung der eingebundenen Mixins spielt eine Rolle wenn die Mixins die selben Component Eigenschaften definieren.
+
+```html
+<a-scene>
+  <a-assets>
+    <a-mixin id="red" material="color: red"></a-mixin>
+    <a-mixin id="blue" material="color: blue"></a-mixin>
+    <a-mixin id="cube" geometry="primitive: box"></a-mixin>
+  </a-assets>
+  <a-entity mixin="red blue cube" material="color: green"></a-entity>
+</a-scene>
+```
+
+1. In diesem Beispiel wird zunächst das Mixin `red` eingebunden. Im ersten Schritt ist also die Farbe des Entities rot.
+
+2. Das Mixin `blue` wird eingebunden. Die Component `material` Eigenschaft `color` wird mit blau überschrieben.
+
+3. Das Mixin `cube` wird eingebunden. Das Entity übernimmt die Geometry Eigenschaft.
+
+4. Das Entity bindet das `material` Component ein mit dem Attribut `color: green`. Die alte Farbe wird also mit grün überschrieben.
+
+Das Resultat ist ein grüner Würfel.
+
+Die Reihenfolge der eingebunden Mixins spielt also eine tragende wenn Eigenschaften wiederholt definiert werden.
+
+Reihenfolge
+
+`mixin="1.eingebunden 2.eingebunden 3.eingebunden"` => 4.Entity Eigenschaften eingebunden
+
+##### 3.3.7 Wichtige/Nützliche Components
 
 ##### 3.4 Ausblick
