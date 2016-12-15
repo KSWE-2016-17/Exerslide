@@ -116,7 +116,7 @@ Im Source Code nun das Modul einbinden.
 
 A-FRAME ist nun initialisiert.
 
-##### 3.3.3 Erste A-Scene: Nur HTML
+##### 3.3.3 A-Frame Konzepte
 
 **Szene**
 
@@ -129,7 +129,7 @@ A-FRAME Objekte werden erst sichtbar wenn sie einer Szene inneliegen.
 Innerhalb dieser Szene können nun Objekte eingefügt werden. Die VR ist ein
 klassischer 3D-Raum in dem ihr über die X,Y,Z Koordinaten Objekte einfügen könnt.
 
-Die Kooredinatensystem in A-Frame sieht folglih aus:
+Die Kooredinatensystem in A-Frame sieht folglich aus:
 <figure id="imgCompOverInher">
   <img src="./images/Coordinates.png"/>
 </figure>
@@ -150,9 +150,19 @@ Fügen wir nun ein Entity ein um die Szene nicht leer zu lassen.
 
 Eine Box ist wie der Name schon angibt ein 3D Rechteck. Es ist ein Entity dass den Ursprungs-Entity in seiner Geometrie bereits beschreibt (`geometry="primitive: box;`).
 
-_Entity_
+**Attribute**
 
-Entities bieten die Möglichkeit Components dynamisch einzubinden.
+Über die HTML-Attribute kann man der Box Eigenschaften (**Components**) dynamisch einbinden. Farbe, Form, Sichtbarkeit, je nachdem
+welche Funktionen man von A-FRAME selber oder Fremd-Plugins nutzen möchte.
+
+`width, height, depth` geben beispielsweise die Maße in Breite (x-Achse), Höhe(y-Achse), Tiefe(z-Achse) an.
+
+Weitere wichtige Attribute sind beispielsweise
+
+* Position `position="3 2 5"`
+* Rotation `rotation="90 0 45"`
+* Color    `color="#FFFFFF"`
+
 
 Um die Eigenschaften und Methoden eines Entities zu lesen muss man nur mittels DOM-Parser das HTML-Element aufrufen.
 
@@ -163,7 +173,9 @@ Um die Eigenschaften und Methoden eines Entities zu lesen muss man nur mittels D
 ```javascript
 var el = document.querySelector('#mario');
 ```
+
 <hr>
+
 Eigenschaften eines `Entity` (einige Beispiele)
 
 _components_ `<a-entity>.components` ist ein Objekt aus Components dass dem Entity anhängt.
@@ -182,9 +194,11 @@ document.querySelector('a-entity[sound]').components.sound.pause();
 [Mehr zu den Eigenschaften eines A-FRAME Entity](https://aframe.io/docs/0.3.0/core/entity.html#properties)
 
 <hr>
+
 Methoden eines `Entity` (einige Beispiele)
 
 _getAttribute(attr)_ Attribut eines Components einer Entity lesen
+
 ```javascript
 // <a-entity geometry="primitive: box; width: 3">
 entity.getAttribute('geometry');
@@ -202,6 +216,7 @@ entity.setAttribute('visible', false);
 ```
 
 <hr>
+
 Event-Listener eines `Entity`
 
 Entities können über einen Eventlistener auf Änderungen ihrer Components reagieren.
@@ -223,21 +238,6 @@ entity.addEventListener('child-attached', function (evt) {
   };
 });
 ```
-
-<hr>
-
-**Attribute**
-
-Über die HTML-Attribute kann man der Box Eigenschaften (**Components**) zutragen. Farbe, Form, Sichtbarkeit, je nachdem
-welche Funktionen man von A-FRAME selber oder Fremd-Plugins nutzen möchte.
-
-`width, height, depth` geben beispielsweise die Maße in Breite (x-Achse), Höhe(y-Achse), Tiefe(z-Achse) an.
-
-Weitere wichtige Attribute sind beispielsweise
-
-* Position `position="3 2 5"`
-* Rotation `rotation="90 0 45"`
-* Color    `color="#FFFFFF"`
 
 **Animation**
 
