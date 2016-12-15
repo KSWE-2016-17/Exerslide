@@ -307,6 +307,39 @@ Mehr zu [Sky](https://aframe.io/docs/0.3.0/primitives/a-sky.html)
 
 ##### 3.3.5 Asset-Management-System
 
+Das Asset-Management-System bietet die Möglichkeit Assets, also (Media-)Dateien, in einem abgegrenzten Bereich vorzuladen und im Cache zu halten. Dies ist wichtig, denn das _preloaden_ der Dateien vor dem Rendern hält die Assets in einem Cache, verhindert das Fehlen von Assets in der Szene und verbessert die Performance.
+
+Assets werden innerhalb der Scene im `<a-assets></a-assets>` Block geladen. Die Scene wird erst gerendert wenn alle Assets erfolgreich geladen wurden oder einen Fehler beim Laden erzeugt haben.
+
+Folgende Assets HTML-Elemente werden für A-FRAME definiert:
+
+* `<a-asset-item>` - Gemischtes. z.B. 3D-Objekte
+* `<audio>` - Audio Dateien
+* `<img>` - Bilder (Texturen)
+* `<video>` - Video (Texturen)
+
+Diese Assets können dann innerhalb der Scene Entities benutzt werden.
+
+```html
+<a-scene>
+  <!-- Asset management system. -->
+  <a-assets>
+    <a-asset-item id="sculpture" src="./assets/objects/cube/sculpture.dae"></a-asset-item>
+    <a-mixin id="image" geometry="height: 2; width: 2"></a-mixin>
+    <audio id="blip1" src="blipaudio.wav"></audio>
+    <img id="advertisement" src="ad.png">
+    <video id="kentucky-derby" src="derby.mp4">
+  </a-assets>
+  <!-- Scene. -->
+  <a-plane src="advertisement"></a-plane>
+  <a-sound src="#blip1"></a-sound>
+  <a-entity geometry="primitive: plane" material="src: #kentucky-derby"></a-entity>
+  <a-collada-model click-drag src="#sculpture" position="10 0 -6"></a-collada-model>
+</a-scene>
+```
+
+
+
 ##### 3.3.6 Wichtige/Nützliche Components
 
 ##### 3.4 Ausblick
