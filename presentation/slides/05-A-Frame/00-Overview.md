@@ -204,6 +204,25 @@ Mehr zu [Sky](https://aframe.io/docs/0.3.0/primitives/a-sky.html)
 
 ##### 3.3.5 Entity-Component-System
 
+A-FRAME basiert auf dem [Entity-Component-System Design-Pattern](https://en.wikipedia.org/wiki/Entity%E2%80%93component%E2%80%93system).
+
+Das Entity-Component-System Pattern wird häufig in der Spieleentwicklung genutzt. Durch das Pattern wird eine hohe Flexbilität ermöglicht. Jedes existierende Objekt in der (Spiel-)Welt ist ein Entity. Ihr Verhalten wird durch die Components bestimmt. Dabei kann ein Entity beliebige viele Components halten und so in seinem Verhalten und Aktionen definiert werden. Dies ermöglicht Änderungen des Verhaltens des Objekts während der Laufzeit, indem man Components entfernt oder neue Components hinzufügt.
+
+Durch das Nutzen des Patterns entfällt die strikte hierarchische Struktur der Vererbung, die komplexer wird, je mehr Verhaltensmuster eingefügt werden müssten.
+
+Folglich basiert das ECS-Pattern sehr stark auf dem "Composition over Inheritance" Prinzip.
+
+Das ["Composition over Inheritance"](https://en.wikipedia.org/wiki/Composition_over_inheritance) Prinzip ist ein Prinzip aus der OOP. Ziel ist es, Klassen ein Polymorphisches Verhalten, mit Code Wiederverwendung, beizubringen indem Klassen in ihrem Verhalten durch Objekte definiert werden die sie von anderen Klassen erzeugen und beinhalten/tragen (Composition). Diese Objekte bestimmen dann das Verhalten.
+Die ungewünschte Alternative wäre es, das Verhalten durch Vererbung zu definieren (Inheritance).
+
+<figure id="imgCompOverInher">
+  <img src="./images/comp.png"/>
+</figure>
+
+Folglich der Begriff des "Composition over Inheritance".
+
+Der Vorteil ist also dass wenn wir ein Entity um Verhalten erweitern möchten, wir nicht eine weitere Vererbungshierarchie hinzufügen müssen. Ebenso können leicht Verhaltensmuster erzeugt werden, die dann von allen Entitites benutzt werden können.
+
 ##### 3.3.6 Wichtige/Nützliche Components
 
 ##### 3.4 Ausblick
