@@ -55,7 +55,7 @@ Durch das Entity-Component-System können Entities einfach eingefügt und in ihr
 
 A-Frame ist aktuell in der Version 0.3.0 verfügbar und wird durch die Community stetig erweitert und gefördert.
 
-Beispiel:
+A-Frame Code Beispiel:
 ```html
 <body>
   <a-scene>
@@ -75,12 +75,12 @@ A-Frame basiert auf [THREE.js](https://threejs.org/). Einer Cross-Browser Javasc
 im Web Browser visualisieren kann. THREE.js basiert dabei auf [WebGL](https://www.khronos.org/webgl/).
 
 A-Frame nutzt HTML um Szenerien zu visualisieren. Zusätzlich wird das Entity-Component-System
-leicht über DOM nutzbar (s. 3.3.5).
+leicht über DOM nutzbar ([s. 3.3.1](/#3.3.1 Entity-Component-System)).
 ##### 3.3.1 Entity-Component-System
 
 A-FRAME basiert auf dem [Entity-Component-System Design-Pattern](https://en.wikipedia.org/wiki/Entity%E2%80%93component%E2%80%93system).
 
-Das Entity-Component-System Pattern wird häufig in der Spieleentwicklung genutzt. Durch das Pattern wird eine hohe Flexbilität ermöglicht. Jedes existierende Objekt in der (Spiel-)Welt ist ein Entity. Ihr Verhalten wird durch die Components bestimmt. Dabei kann ein Entity beliebige viele Components halten und so in seinem Verhalten und Aktionen definiert werden. Dies ermöglicht Änderungen des Verhaltens des Objekts während der Laufzeit, indem man Components entfernt oder neue Components hinzufügt.
+Das Entity-Component-System Pattern wird häufig in der Spieleentwicklung genutzt. Durch das Pattern wird eine hohe Flexbilität ermöglicht. Jedes existierende Objekt in der (Spiel-)Welt ist ein Entity. Ihr Verhalten wird durch die Components bestimmt. Dabei kann ein Entity beliebige viele Components halten und so in seinem Verhalten und Aktionen definiert werden. Dies ermöglicht Änderungen des Verhaltens des Objekts **während der Laufzeit**, indem man Components entfernt oder neue Components hinzufügt (ähnlich wie bei Strategie Pattern).
 
 Durch das Nutzen des Patterns entfällt die strikte hierarchische Struktur der Vererbung, die komplexer wird, je mehr Verhaltensmuster eingefügt werden müssten.
 
@@ -97,15 +97,15 @@ Folglich der Begriff des "Composition over Inheritance".
 
 Der Vorteil ist also dass wenn wir ein Entity um Verhalten erweitern möchten, wir nicht eine weitere Vererbungshierarchie hinzufügen müssen. Ebenso können leicht Verhaltensmuster erzeugt werden, die dann von allen Entitites benutzt werden können.
 
-##### 3.3.2 Konzept
+##### 3.3.2 A-Frame einbinden
 
-A-Frame kann über die bekannten Wege initialisiert und in das eigene Projekt eingebunden werden.
+A-Frame kann über die folgenden Wege initialisiert und in das eigene Projekt eingebunden werden.
 
-Variante 1) Das JS-Script in der Minified-Version in seine HTML-Page einbetten.
-Optional kann man das Script auch runterladen. Die offizielle Version kann hier
+- **Variante 1:** Das JS-Script in der Minified-Version in seine HTML-Page einbetten: `<script src="https://aframe.io/releases/0.3.2/aframe.min.js"> </script>`
+- Optional kann man das Script auch runterladen. Die offizielle Version kann hier
 gefunden werden: [A-FRAME 0.3.2 min](https://aframe.io/releases/0.3.2/aframe.min.js)
 
-Variante 2) Über NPM. `npm install --save aframe`
+- **Variante 2:** Über NPM. `npm install --save aframe`
 
 Stable Versions sind somit unter folgendem Link zu finden [A-FRAME npm](https://www.npmjs.com/package/aframe)
 
