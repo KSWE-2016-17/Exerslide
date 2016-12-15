@@ -32,18 +32,18 @@ kleinen Raum orten und diese dann innerhalb von Spielen verarbeiten.
 
 ### 2. Beispiele
 Headsets
-* HTC-VIVE (Valve&HTC)
-* Sony VR (Sony)
-* Occulus Rift
+* [HTC-VIVE (Valve&HTC)](https://www.vive.com/de/)
+* [Sony VR (Sony)](https://www.playstation.com/de-de/explore/playstation-vr/)
+* [Oculus Rift](https://www3.oculus.com/en-us/rift/)
 
 Technologien
-* A-FRAME (Web-VR)
-* React-VR (Web-VR)
-* Carmel-VR (Web-Browser spezialisiert auf VR)
+* [A-FRAME (Web-VR)](https://aframe.io)
+* [React-VR (Web-VR)](https://developer.oculus.com/blog/introducing-the-react-vr-pre-release/)
+* [Carmel-VR (Web-Browser spezialisiert auf VR)](https://developer.oculus.com/blog/carmel-developer-preview-launches-today/)
 
 Entertainment
-* Chernobyl-VR (Chernobyl über VR besuchen)
-* Project Arena (VR-Sport Tennis-Spiel)
+* [Chernobyl-VR (Chernobyl über VR besuchen)](http://www.chernobylvrproject.com/en/)
+* [Project Arena (VR-Sport Tennis-Spiel)](https://www.youtube.com/watch?v=SIfGuPW_mMs)
 
 ### 3. A-FRAME
 
@@ -55,15 +55,15 @@ Durch das Entity-Component-System können Entities einfach eingefügt und in ihr
 
 A-Frame ist aktuell in der Version 0.3.0 verfügbar und wird durch die Community stetig erweitert und gefördert.
 
-Beilsiel:
-~~~
+Beispiel:
+```html
 <body>
   <a-scene>
     <a-box color="#6173F4" opacity="0.8" depth="2"></a-box>
     <a-sphere radius="2" src="texture.png" position="1 1 0"></a-sphere>
   </a-scene>
 </body>
-~~~
+```
 
 #### 3.2 An wen richtet sich A-FRAME?
 
@@ -72,7 +72,7 @@ A-Frame wird vom Mozilla-VR-Team entwickelt und richtet sich an die Web-Entwickl
 #### 3.3 Wie funktioniert A-FRAME?
 
 A-Frame basiert auf [THREE.js](https://threejs.org/). Einer Cross-Browser Javascript API mit der man 3D Grafiken/Animationen
-im Web Browser visualisieren kann. THREE.js basiert dabei auf WebGL.
+im Web Browser visualisieren kann. THREE.js basiert dabei auf [WebGL](https://www.khronos.org/webgl/).
 
 A-Frame nutzt HTML um Szenerien zu visualisieren. Zusätzlich wird das Entity-Component-System
 leicht über DOM nutzbar (s. 3.3.5).
