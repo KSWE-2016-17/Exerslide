@@ -184,12 +184,14 @@ Mehr zu [Licht](https://aframe.io/docs/0.3.0/components/light.html)
 **Himmel**
 
 ```html
-<a-sky color="#73F7DD"></a-sky>```
+<a-sky color="#73F7DD"></a-sky>
+```
 
 Über den Asset-Manager können Bilder geladen werden.
 
 ```html
-<a-sky src="Asset-ID"></a-sky>```
+<a-sky src="Asset-ID"></a-sky>
+```
 
 Als letztes fügen wir einen Himmel unserer Szene hinzu. Bei der Auswahl des Bildes sollte darauf geachtet werden, dass das Bild über die gesamte Szene gespannt wird. Es wird also wie um eine Kugel gewickelt. Folglich sind Bilder mit schwarzen Rändern, in niedriger Auflösung, oder mit zu deutlichen Motiven unvorteilhaft da die Ränder des Bildes zu deutlich werden.
 
