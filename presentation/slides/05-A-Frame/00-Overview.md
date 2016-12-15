@@ -135,7 +135,7 @@ Mehr zur [A-Scene](https://aframe.io/docs/0.3.0/core/scene.html)
 
 **Box-Model**
 
-Fügen wir nun ein Objekt ein um die Szene nicht leer zu lassen.
+Fügen wir nun ein Entity ein um die Szene nicht leer zu lassen.
 
 ```html
 <a-scene>
@@ -143,7 +143,85 @@ Fügen wir nun ein Objekt ein um die Szene nicht leer zu lassen.
 </a-scene>
 ```
 
-Eine Box ist wie der Name schon angibt ein 3D Rechteck. Über die HTML-Attribute kann man der Box Eigenschaften zutragen. Farbe, Form, Sichtbarkeit, je nachdem
+Eine Box ist wie der Name schon angibt ein 3D Rechteck. Es ist ein Entity dass den Ursprungs-Entity in seiner Geometrie bereits beschreibt (`geometry="primitive: box;`).
+
+_Entity_
+
+Entities bieten die Möglichkeit Components dynamisch einzubinden.
+
+Um die Eigenschaften und Methoden eines Entities zu lesen muss man nur mittels DOM-Parser das HTML-Element aufrufen.
+
+```html
+<a-entity id="mario"></a-entity>
+```
+
+```javascript
+var el = document.querySelector('#mario');
+```
+<hr>
+Eigenschaften eines `Entity` (**Auswahl**)
+
+_components_ `<a-entity>.components` ist ein Objekt aus Components dass dem Entity anhängt.
+Damit kann auf alle Components eines Entities zugegriffen werden (Eigenschaften, Methoden).
+
+```javascript
+//Material-Object aulesen
+var material = document.querySelector('a-entity[material]').components.material.material;
+```
+
+```javascript
+// Methode des Component-Sound aufrufen
+document.querySelector('a-entity[sound]').components.sound.pause();
+```
+
+[Mehr zu den Eigenschaften eines A-FRAME Entity](https://aframe.io/docs/0.3.0/core/entity.html#properties)
+
+<hr>
+Methoden eines `Entity` (**Auswahl**)
+
+_getAttribute(attr)_ Attribut eines Components einer Entity lesen
+```javascript
+// <a-entity geometry="primitive: box; width: 3">
+entity.getAttribute('geometry');
+// >> { primitive: "box", width: 3 }
+
+
+// <a-entity data-position="0 1 1">
+entity.getAttribute('data-position');
+// >> "0 1 1"
+```
+
+_setAttribute(attr)_ Component einer Entity zuweisen
+```javascript
+entity.setAttribute('visible', false);
+```
+
+<hr>
+Event-Listener eines `Entity`
+
+Entities können über einen Eventlistener auf Änderungen ihrer Components reagieren.
+
+```javascript
+entity.addEventListener('componentchanged', function (evt) {
+  if (evt.detail.name === 'position') {
+    console.log('Entity has moved from', evt.detail.oldData, 'to', evt.detail.newData, '!');
+  }
+});
+```
+
+Ebenfalls kann auf neu angeängte Entities reagiert werden.
+
+```javascript
+entity.addEventListener('child-attached', function (evt) {
+  if (evt.detail.el.tagName.toLowerCase() === 'a-box') {
+    console.log('a box element has been attached');
+  };
+});
+```
+
+<hr>
+
+ Über die HTML-Attribute kann man der Box Eigenschaften (Components) zutragen. Farbe, Form, Sichtbarkeit, je nachdem
 welche Funktionen man von A-FRAME selber oder Fremd-Plugins nutzen möchte.
 
 `width, height, depth` geben beispielsweise die Maße in Breite, Höhe, Tiefe an.
