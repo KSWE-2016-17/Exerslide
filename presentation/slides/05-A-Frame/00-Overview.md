@@ -164,7 +164,7 @@ Um die Eigenschaften und Methoden eines Entities zu lesen muss man nur mittels D
 var el = document.querySelector('#mario');
 ```
 <hr>
-Eigenschaften eines `Entity` (**Auswahl**)
+Eigenschaften eines `Entity` (einige Beispiele)
 
 _components_ `<a-entity>.components` ist ein Objekt aus Components dass dem Entity anhängt.
 Damit kann auf alle Components eines Entities zugegriffen werden (Eigenschaften, Methoden).
@@ -182,7 +182,7 @@ document.querySelector('a-entity[sound]').components.sound.pause();
 [Mehr zu den Eigenschaften eines A-FRAME Entity](https://aframe.io/docs/0.3.0/core/entity.html#properties)
 
 <hr>
-Methoden eines `Entity` (**Auswahl**)
+Methoden eines `Entity` (einige Beispiele)
 
 _getAttribute(attr)_ Attribut eines Components einer Entity lesen
 ```javascript
@@ -228,7 +228,7 @@ entity.addEventListener('child-attached', function (evt) {
 
 **Attribute**
 
-Über die HTML-Attribute kann man der Box Eigenschaften (Components) zutragen. Farbe, Form, Sichtbarkeit, je nachdem
+Über die HTML-Attribute kann man der Box Eigenschaften (**Components**) zutragen. Farbe, Form, Sichtbarkeit, je nachdem
 welche Funktionen man von A-FRAME selber oder Fremd-Plugins nutzen möchte.
 
 `width, height, depth` geben beispielsweise die Maße in Breite (x-Achse), Höhe(y-Achse), Tiefe(z-Achse) an.
