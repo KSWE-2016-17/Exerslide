@@ -163,6 +163,7 @@ Weitere wichtige Attribute sind beispielsweise
 * Rotation `rotation="90 0 45"`
 * Color    `color="#FFFFFF"`
 
+**Entities**
 
 Um die Eigenschaften und Methoden eines Entities zu lesen muss man nur mittels DOM-Parser das HTML-Element aufrufen.
 
@@ -229,7 +230,7 @@ entity.addEventListener('componentchanged', function (evt) {
 });
 ```
 
-Ebenfalls kann auf neu angeängte Entities reagiert werden.
+Ebenfalls kann auf neu angehängte Entities reagiert werden.
 
 ```javascript
 entity.addEventListener('child-attached', function (evt) {
@@ -238,6 +239,51 @@ entity.addEventListener('child-attached', function (evt) {
   };
 });
 ```
+
+<hr>
+
+**Components**
+
+Components sind wiederverwendbare Objekte die einem Entity hinzugefügt werden und diesem dann ihr Verhalten/ihre Eigenschaften hinzufügen. Aus vielen kleinen Components kann so eine komplexe Entität erzeugt werden.
+
+<figure id="imgComponents">
+  <img src="./images/components.jpg"/>
+</figure>
+
+In HTML entspricht das Attribut dem Component-Namen und die Werte entsprechen den Component Daten. Innerhalb einer Entity sieht das also wie folgt aus.
+
+`component="component-data"`
+
+entspricht z.B.
+
+`position="1 2 3"`
+
+Es gibt Single-Property-Components und Multi-Property-Components
+
+<hr>
+
+`Single-Property-Components` Daten werden durch einen Wert repräsentiert. Sie sehen daher wie reguläre HTML-Attribute aus.
+
+```html
+<!-- `position` is the name of the position component. -->
+<!-- `1 2 3` is the data of the position component. -->
+<a-entity position="1 2 3"></a-entity>
+```
+
+<hr>
+
+`Multi-Property-Components` Daten werden durch mehrere Attribute und Werte definiert.
+
+```html
+<!-- `light` is the name of the light component. -->
+<!-- The `type` property of the light is set to `point`. -->
+<!-- The `color` property of the light is set to `crimson`. -->
+<a-entity light="type: point; color: crimson"></a-entity>
+```
+
+Components bieten eine Vielzahl an Optionen und Methoden. Mehr auf [AFRAME-Components](https://aframe.io/docs/0.3.0/core/component.html)
+
+<hr>
 
 **Animation**
 
