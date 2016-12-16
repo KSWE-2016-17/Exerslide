@@ -116,7 +116,7 @@ Im Source Code nun das Modul einbinden.
 
 A-FRAME ist nun initialisiert.
 
-##### 3.3.3 Erste A-Scene: Nur HTML
+##### 3.3.3 A-Frame Konzepte
 
 **Szene**
 
@@ -129,7 +129,7 @@ A-FRAME Objekte werden erst sichtbar wenn sie einer Szene inneliegen.
 Innerhalb dieser Szene können nun Objekte eingefügt werden. Die VR ist ein
 klassischer 3D-Raum in dem ihr über die X,Y,Z Koordinaten Objekte einfügen könnt.
 
-Die Kooredinatensystem in A-Frame sieht folglih aus:
+Die Kooredinatensystem in A-Frame sieht folglich aus:
 <figure id="imgCompOverInher">
   <img src="./images/Coordinates.png"/>
 </figure>
@@ -150,9 +150,19 @@ Fügen wir nun ein Entity ein um die Szene nicht leer zu lassen.
 
 Eine Box ist wie der Name schon angibt ein 3D Rechteck. Es ist ein Entity dass den Ursprungs-Entity in seiner Geometrie bereits beschreibt (`geometry="primitive: box;`).
 
-_Entity_
+**Attribute**
 
-Entities bieten die Möglichkeit Components dynamisch einzubinden.
+Über die HTML-Attribute kann man der Box Eigenschaften (**Components**) dynamisch einbinden. Farbe, Form, Sichtbarkeit, je nachdem
+welche Funktionen man von A-FRAME selber oder Fremd-Plugins nutzen möchte.
+
+`width, height, depth` geben beispielsweise die Maße in Breite (x-Achse), Höhe(y-Achse), Tiefe(z-Achse) an.
+
+Weitere wichtige Attribute sind beispielsweise
+
+* Position `position="3 2 5"`
+* Rotation `rotation="90 0 45"`
+* Color    `color="#FFFFFF"`
+
 
 Um die Eigenschaften und Methoden eines Entities zu lesen muss man nur mittels DOM-Parser das HTML-Element aufrufen.
 
@@ -163,8 +173,10 @@ Um die Eigenschaften und Methoden eines Entities zu lesen muss man nur mittels D
 ```javascript
 var el = document.querySelector('#mario');
 ```
+
 <hr>
-Eigenschaften eines `Entity` (**Auswahl**)
+
+Eigenschaften eines `Entity` (einige Beispiele)
 
 _components_ `<a-entity>.components` ist ein Objekt aus Components dass dem Entity anhängt.
 Damit kann auf alle Components eines Entities zugegriffen werden (Eigenschaften, Methoden).
@@ -182,9 +194,11 @@ document.querySelector('a-entity[sound]').components.sound.pause();
 [Mehr zu den Eigenschaften eines A-FRAME Entity](https://aframe.io/docs/0.3.0/core/entity.html#properties)
 
 <hr>
-Methoden eines `Entity` (**Auswahl**)
+
+Methoden eines `Entity` (einige Beispiele)
 
 _getAttribute(attr)_ Attribut eines Components einer Entity lesen
+
 ```javascript
 // <a-entity geometry="primitive: box; width: 3">
 entity.getAttribute('geometry');
@@ -202,6 +216,7 @@ entity.setAttribute('visible', false);
 ```
 
 <hr>
+
 Event-Listener eines `Entity`
 
 Entities können über einen Eventlistener auf Änderungen ihrer Components reagieren.
@@ -223,21 +238,6 @@ entity.addEventListener('child-attached', function (evt) {
   };
 });
 ```
-
-<hr>
-
-**Attribute**
-
-Über die HTML-Attribute kann man der Box Eigenschaften (Components) zutragen. Farbe, Form, Sichtbarkeit, je nachdem
-welche Funktionen man von A-FRAME selber oder Fremd-Plugins nutzen möchte.
-
-`width, height, depth` geben beispielsweise die Maße in Breite (x-Achse), Höhe(y-Achse), Tiefe(z-Achse) an.
-
-Weitere wichtige Attribute sind beispielsweise
-
-* Position `position="3 2 5"`
-* Rotation `rotation="90 0 45"`
-* Color    `color="#FFFFFF"`
 
 **Animation**
 
@@ -307,8 +307,164 @@ Mehr zu [Sky](https://aframe.io/docs/0.3.0/primitives/a-sky.html)
 
 ##### 3.3.5 Asset-Management-System
 
-##### 3.3.6 Wichtige/Nützliche Components
+Das Asset-Management-System bietet die Möglichkeit Assets, also (Media-)Dateien, in einem abgegrenzten Bereich vorzuladen und im Cache zu halten. Dies ist wichtig, denn das _preloaden_ der Dateien vor dem Rendern hält die Assets in einem Cache, verhindert das Fehlen von Assets in der Szene und verbessert die Performance.
+
+Assets werden innerhalb der Scene im `<a-assets></a-assets>` Block geladen. Die Scene wird erst gerendert wenn alle Assets erfolgreich geladen wurden oder einen Fehler beim Laden erzeugt haben.
+
+Folgende Assets HTML-Elemente werden für A-FRAME definiert:
+
+* `<a-asset-item>` - Gemischtes. z.B. 3D-Objekte
+* `<audio>` - Audio Dateien
+* `<img>` - Bilder (Texturen)
+* `<video>` - Video (Texturen)
+
+Diese Assets können dann innerhalb der Scene Entities benutzt werden.
+
+```html
+<a-scene>
+  <!-- Asset management system. -->
+  <a-assets>
+    <a-asset-item id="sculpture" src="./assets/objects/cube/sculpture.dae"></a-asset-item>
+    <a-mixin id="image" geometry="height: 2; width: 2"></a-mixin>
+    <audio id="blip1" src="blipaudio.wav"></audio>
+    <img id="advertisement" src="ad.png">
+    <video id="kentucky-derby" src="derby.mp4">
+  </a-assets>
+  <!-- Scene. -->
+  <a-plane src="advertisement"></a-plane>
+  <a-sound src="#blip1"></a-sound>
+  <a-entity geometry="primitive: plane" material="src: #kentucky-derby"></a-entity>
+  <a-collada-model click-drag src="#sculpture" position="10 0 -6"></a-collada-model>
+</a-scene>
+```
+
+##### 3.3.6 Mixins
+
+Mixins bieten die Möglichkeit mehrere Components zusammenzufassen und wiederzuverwenden (Sammelbecken von Components). Sie werden im Asset-Management-System über das `<a-mixin></a-mixin>` Element eingebunden. Entities die das Mixin einbinden enthalten folglich die Eigenschaften der Mixin-Components.
+
+```html
+<a-scene>
+  <a-assets>
+    <a-mixin id="red" material="color: red"></a-mixin>
+    <a-mixin id="blue" material="color: blue"></a-mixin>
+    <a-mixin id="cube" geometry="primitive: box"></a-mixin>
+  </a-assets>
+  <a-entity mixin="red cube"></a-entity>
+  <a-entity mixin="blue cube"></a-entity>
+</a-scene>
+```
+
+Das 1. Entity überinmmt die Eigenschaften von `red` und `cube`, in dieser Reihenfolge.
+
+Das 2. Entity würde sich ohne Mixin wie folgt schreiben.
+
+```html
+<a-entity material="color: blue" geometry="primitive: box"></a-entity>
+```
+
+Eigenschaften eines Multi-Property (z.B. ` geometry="primitive: box; width: 1; height: 1; depth: 1"`) mischen sich wenn sie von mehreren Mixins und/oder mit dem Entity definiert werden.
+
+```html
+<a-scene>
+  <a-assets>
+    <a-mixin id="box" geometry="primitive: box"></a-mixin>
+    <a-mixin id="tall" geometry="height: 10"></a-mixin>
+    <a-mixin id="wide" geometry="width: 10"></a-mixin>
+  </a-assets>
+  <a-entity mixin="wide tall box" geometry="depth: 2"></a-entity>
+</a-scene>
+```
+
+Das Entity bindet hier alle Mixins ein und definiert seine eigene Tiefe ( _depth_ ). Zusammengesetzt sieht das Entity wie folgt aus:
+
+```html
+<a-entity geometry="primitive: box; height: 10; depth: 2; width: 10"></a-entity>
+```
+
+Die Ordnung der eingebundenen Mixins spielt eine Rolle wenn die Mixins die selben Component Eigenschaften definieren.
+
+```html
+<a-scene>
+  <a-assets>
+    <a-mixin id="red" material="color: red"></a-mixin>
+    <a-mixin id="blue" material="color: blue"></a-mixin>
+    <a-mixin id="cube" geometry="primitive: box"></a-mixin>
+  </a-assets>
+  <a-entity mixin="red blue cube" material="color: green"></a-entity>
+</a-scene>
+```
+
+1. In diesem Beispiel wird zunächst das Mixin `red` eingebunden. Im ersten Schritt ist also die Farbe des Entities rot.
+
+2. Das Mixin `blue` wird eingebunden. Die Component `material` Eigenschaft `color` wird mit blau überschrieben.
+
+3. Das Mixin `cube` wird eingebunden. Das Entity übernimmt die Geometry Eigenschaft.
+
+4. Das Entity bindet das `material` Component ein mit dem Attribut `color: green`. Die alte Farbe wird also mit grün überschrieben.
+
+Das Resultat ist ein grüner Würfel.
+
+<figure id="imgGreenCube">
+  <img src="./images/greencube.png" width="200" height="200"/>
+</figure>
+
+Die Reihenfolge der eingebunden Mixins spielt also eine tragende wenn Eigenschaften wiederholt definiert werden.
+
+Reihenfolge
+
+`mixin="1.eingebunden 2.eingebunden 3.eingebunden"` => 4.Entity Eigenschaften eingebunden
+
+##### 3.3.7 Wichtige/Nützliche Tools/Components
+
+**Tools**
+
+Zur Einführung in die Modellierung von Objekten und dessen Einbindung in A-FRAME hat A-FRAME [MagicaVoxel in A-FRAME](https://aframe.io/docs/0.3.0/guides/building-with-magicavoxel.html) als kleines Tutorial verfasst.
+
+Der [A-FRAME Inspector](https://aframe.io/docs/0.3.0/guides/using-the-aframe-inspector.html) erlaubt es eine Szene zu untersuchen und zu manipulieren.
+
+<figure id="imgInspector">
+  <img src="./images/inspector.png"/>
+</figure>
+
+
+**Components (Auszug)**
+
+Elementar und bereits genannt:
+
+* [Geometry](https://aframe.io/docs/0.3.0/components/geometry.html)
+* [Light](https://aframe.io/docs/0.3.0/components/light.html)
+* [Material](https://aframe.io/docs/0.3.0/components/material.html)
+* [Position](https://aframe.io/docs/0.3.0/components/position.html)
+* [Rotation](https://aframe.io/docs/0.3.0/components/rotation.html)
+
+[Camera](https://aframe.io/docs/0.3.0/components/camera.html) beschreibt die Kamera die im A-FRAME Fenster eingebunden wird. Bindet man an diese ein Entity kann ein HUD simuliert werden.
+
+<figure id="imgHUD">
+  <img src="./images/hud.png"/>
+</figure>
+
+```html
+<a-camera>
+  <a-ring radius-inner="0.02" radius-outer="0.04" position="0 0 -1"
+            material="color: red; opacity: 0.5"></a-ring>
+	<a-image src="#pic" position="0 -0.7 -1" width="0.5" height="0.2" depth="0.1">
+</a-camera>
+```
+
+[Cursor](https://aframe.io/docs/0.3.0/components/cursor.html) erlaubt Interaktion mit Entities über klicken und betrachten.
+
+[Stats](https://aframe.io/docs/0.3.0/components/stats.html) zeigt technische Daten an.
+
+<figure id="imgStats">
+  <img src="./images/stats.png"/>
+</figure>
+
+```html
+<a-scene stats></a-scene>
+```
+
+[Visible](https://aframe.io/docs/0.3.0/components/visible.html) definiert die Sichtbarkeit.
 
 ##### 3.4 Ausblick
 
-##### 3.4 Ausblick
+A-FRAME erreicht Mitte Januar seinen 1. Geburtstag. Bis dahin soll Version 0.4.0 released werden.
