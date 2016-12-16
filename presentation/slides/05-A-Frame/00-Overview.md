@@ -414,6 +414,57 @@ Reihenfolge
 
 `mixin="1.eingebunden 2.eingebunden 3.eingebunden"` => 4.Entity Eigenschaften eingebunden
 
-##### 3.3.7 Wichtige/Nützliche Components
+##### 3.3.7 Wichtige/Nützliche Tools/Components
+
+**Tools**
+
+Zur Einführung in die Modellierung von Objekten und dessen Einbindung in A-FRAME hat A-FRAME [MagicaVoxel in A-FRAME](https://aframe.io/docs/0.3.0/guides/building-with-magicavoxel.html) als kleines Tutorial verfasst.
+
+Der [A-FRAME Inspector](https://aframe.io/docs/0.3.0/guides/using-the-aframe-inspector.html) erlaubt es eine Szene zu untersuchen und zu manipulieren.
+
+<figure id="imgInspector">
+  <img src="./images/inspector.png"/>
+</figure>
+
+
+**Components (Auszug)**
+
+Elementar und bereits genannt:
+
+* [Geometry](https://aframe.io/docs/0.3.0/components/geometry.html)
+* [Light](https://aframe.io/docs/0.3.0/components/light.html)
+* [Material](https://aframe.io/docs/0.3.0/components/material.html)
+* [Position](https://aframe.io/docs/0.3.0/components/position.html)
+* [Rotation](https://aframe.io/docs/0.3.0/components/rotation.html)
+
+[Camera](https://aframe.io/docs/0.3.0/components/camera.html) beschreibt die Kamera die im A-FRAME Fenster eingebunden wird. Bindet man an diese ein Entity kann ein HUD simuliert werden.
+
+<figure id="imgHUD">
+  <img src="./images/hud.png"/>
+</figure>
+
+```html
+<a-camera>
+  <a-ring radius-inner="0.02" radius-outer="0.04" position="0 0 -1"
+            material="color: red; opacity: 0.5"></a-ring>
+	<a-image src="#pic" position="0 -0.7 -1" width="0.5" height="0.2" depth="0.1">
+</a-camera>
+```
+
+[Cursor](https://aframe.io/docs/0.3.0/components/cursor.html) erlaubt Interaktion mit Entities über klicken und betrachten.
+
+[Stats](https://aframe.io/docs/0.3.0/components/stats.html) zeigt technische Daten an.
+
+<figure id="imgStats">
+  <img src="./images/stats.png"/>
+</figure>
+
+```html
+<a-scene stats></a-scene>
+```
+
+[Visible](https://aframe.io/docs/0.3.0/components/visible.html) definiert die Sichtbarkeit.
 
 ##### 3.4 Ausblick
+
+A-FRAME erreicht Mitte Januar seinen 1. Geburtstag. Bis dahin soll Version 0.4.0 released werden.
