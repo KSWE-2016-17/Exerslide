@@ -8,14 +8,30 @@ id: aframe-overview
 
 ## Dokumentation: A-FRAME
 
+## Inhaltsverzeichnis
+1. Was ist VirtualReality
+2. Beispiele
+3. A-FRAME
+3.1 Was ist A-FRAME?
+3.2 An wen richtet sich A-FRAME?
+3.3 Wie funktioniert A-FRAME?
+3.3.1 Entity-Component-System
+3.3.2 A-FRAME einbinden
+3.3.3 A-FRAME Konzepte
+3.3.3.1 A-FRAME Konzepte-Entities
+3.3.3.2 A-FRAME Konzepte-Components
+3.3.3 A-FRAME Konzepte Fortführung
+3.3.4 Asset-Management-System
+3.3.5 Mixins
+3.3.6 Wichtige/Nützliche Tools/Components
+3.4 Ausblick
+
 ### 1. Was ist VirtualReality?
 
-VirtualReality ist eine computer generierte interaktive Umwelt die der Nutzer
-wahrnehmen, erforschen und mit der er interagieren kann. Die künstliche Umwelt
+VirtualReality ist eine computergenerierte interaktive Umwelt die der Nutzer
+wahrnehmen, erforschen und mit welcher er interagieren kann. Die künstliche Umwelt
 wird lebendiger, je besser die Sinne des Nutzers stimuliert werden. Das Gefühl
 der Immersion ist am stärksten wenn alle Sinne angesprochen werden.
-Sehen, Fühlen, Hören, Schmecken, Riechen. Zumindest die ersten 3 Sinne sind die
-Sinne die am stärksten fokussiert werden.
 
 Die gängige Technik der heutigen VR-Headsets sind 2 gekrümmte Linsen die einen
 Bildschirm vergrößern und verzerren. Auf diese Weise erhalten die beiden Augen
@@ -46,6 +62,7 @@ Technologien
 Entertainment
 * [Chernobyl-VR (Chernobyl über VR besuchen)](http://www.chernobylvrproject.com/en/)
 * [Project Arena (VR-Sport Tennis-Spiel)](https://www.youtube.com/watch?v=SIfGuPW_mMs)
+* [Public Speaking (VR Reden üben)](https://play.google.com/store/apps/details?id=com.virtualSpeech.android)
 
 ### 3. A-FRAME
 
@@ -53,7 +70,7 @@ Entertainment
 
 [A-Frame](https://aframe.io/) ist ein Web Framework um die Virtual Reality in den Webbrowser zu bringen. Es werden Desktop und mobile Plattformen unterstützt sowie VR-Brillen. A-Frame nutzt dafür HTML sowie das Entity-Component-System.
 
-Durch das Entity-Component-System können Entities einfach eingefügt und in ihrem Verhalten und Aussehen verändert werden. Diese können um Components erweitert werden was zusätzliche Funktionalitäten ermöglicht. Dadurch können Entities viele verschiedene Eigenschaften besitzen die von anderen Components beigesteuert werden.
+Durch das Entity-Component-System können Entities einfach eingefügt und in ihrem Verhalten und Aussehen verändert werden. Diese können um Components erweitert werden, was zusätzliche Funktionalitäten ermöglicht. Dadurch können Entities viele verschiedene Eigenschaften besitzen die von anderen Components beigesteuert werden.
 
 A-Frame ist aktuell in der Version 0.4.0 verfügbar und wird durch die Community stetig erweitert und gefördert.
 
@@ -96,6 +113,7 @@ Composition over Inheritance Beispiel:
   <img src="./images/comp.png"/>
 </figure>
 
+
 Der Vorteil ist also dass wenn wir ein Entity um Verhalten erweitern möchten, wir nicht eine weitere Vererbungshierarchie hinzufügen müssen. Ebenso können leicht Verhaltensmuster erzeugt werden, die dann von allen Entitites benutzt werden können.
 
 ##### 3.3.2 A-Frame einbinden
@@ -130,7 +148,7 @@ A-FRAME Objekte werden erst sichtbar wenn sie einer Szene inneliegen.
 Innerhalb dieser Szene können nun Objekte eingefügt werden. Die VR ist ein
 klassischer 3D-Raum in dem ihr über die X,Y,Z Koordinaten Objekte einfügen könnt.
 
-Die Kooredinatensystem in A-Frame sieht folglich aus:
+Das Koordinatensystem in A-Frame sieht folglich so aus:
 <figure id="imgCompOverInher">
   <img src="./images/Coordinates.png"/>
 </figure>
@@ -257,7 +275,9 @@ Komponente kann man beliebig in einem Entity kombinieren um gewünschte Effekte 
 Entity verfügen über verschiedene Methoden.
 Beispielsweise kann man mit Javascript Attribute eines Entity dynamisch manipulieren.
 
-_getAttribute(attr)_ : Attribut eines Components einer Entity lesen
+Methoden eines `Entity` (einige Beispiele)
+
+_getAttribute(attr)_ Attribut eines Components einer Entity lesen
 
 ```javascript
 // <a-entity geometry="primitive: box; width: 3">
@@ -399,7 +419,7 @@ Diese Assets können dann innerhalb der Scene Entities benutzt werden.
 </a-scene>
 ```
 
-##### 3.3.6 Mixins
+##### 3.3.5 Mixins
 
 Mixins bieten die Möglichkeit mehrere Components zusammenzufassen und wiederzuverwenden (Sammelbecken von Components). Sie werden im Asset-Management-System über das `<a-mixin></a-mixin>` Element eingebunden. Entities die das Mixin einbinden enthalten folglich die Eigenschaften der Mixin-Components.
 
@@ -475,7 +495,7 @@ Reihenfolge
 
 `mixin="1.eingebunden 2.eingebunden 3.eingebunden"` => 4.Entity Eigenschaften eingebunden
 
-##### 3.3.7 Wichtige/Nützliche Tools/Components
+##### 3.3.6 Wichtige/Nützliche Tools/Components
 
 **Tools**
 
