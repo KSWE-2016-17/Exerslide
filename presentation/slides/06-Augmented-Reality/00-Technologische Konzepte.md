@@ -11,7 +11,8 @@ chapter: Augmented Reality
 3. [Argon A-Frame](#/AR_Argon_AFrame)
     1. Verknüpfung ArgonJS und A-Frame
     2. Entities
-    3. Components
+    3. Componenten
+    4. Primitives
 4. [ThreeJS](#/AR_ThreeJS)
     1. Was ist ThreeJS?
     2. Eine Szene erstellen
