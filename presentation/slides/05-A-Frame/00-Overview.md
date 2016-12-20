@@ -22,9 +22,6 @@ id: aframe-overview
 3.3.1 Entity-Component-System
 3.3.2 A-FRAME einbinden
 3.3.3 A-FRAME Konzepte
-3.3.3.1 A-FRAME Konzepte-Entities
-3.3.3.2 A-FRAME Konzepte-Components
-3.3.3 A-FRAME Konzepte Fortführung
 3.3.4 Asset-Management-System
 3.3.5 Mixins
 3.3.6 Wichtige/Nützliche Tools/Components
@@ -87,7 +84,7 @@ A-Frame Code Beispiel:
   </a-scene>
 </body>
 ```
-_Hinweis: Hier wird A-Frame in der Version 0.3.0 betrahtet_
+_Hinweis: Hier wird A-Frame in der Version 0.3.0 betrachtet_
 
 #### 3.2 An wen richtet sich A-FRAME?
 
@@ -191,7 +188,7 @@ Um die Eigenschaften und Methoden eines Entities zu lesen muss man nur mittels D
 var el = document.querySelector('#mario');
 ```
 <hr>
-Mehr über A-Frame Entities](https://aframe.io/docs/0.3.0/core/entity.html).
+[Mehr über A-Frame Entities](https://aframe.io/docs/0.3.0/core/entity.html).
 
 A-Frame bietet einige vordefinierte Entitys(Primitives) an.
 Primitives haben einen vordefinierte Name und verfügen bereits über einige Komponenten
@@ -224,6 +221,12 @@ Eine Box ist wie der Name schon angibt ein 3D Rechteck. Es ist ein Entity das de
 
 ###### **A-Frame Components**
 
+Components sind wiederverwendbare Objekte die einem Entity hinzugefügt werden und diesem dann ihr Verhalten/ihre Eigenschaften hinzufügen. Aus vielen kleinen Components kann so eine komplexe Entität erzeugt werden.
+
+<figure id="imgComponents">
+  <img src="./images/components.jpg"/>
+</figure>
+
 **Attribute:**
 Um einen Entity Eigenschaften zu verleihen, fügt man Komponente hinzu.
 Die kann man mittels HTML-Attribute tun.
@@ -251,6 +254,8 @@ var material = document.querySelector('a-entity[material]').components.material.
 document.querySelector('a-entity[sound]').components.sound.pause();
 ```
 
+[Mehr zu den Eigenschaften eines A-FRAME Entity](https://aframe.io/docs/0.3.0/core/entity.html#properties)
+
 **Single-Property Component:**
 Einfache Komponente definieren nur eine eigenschaft von Entity und sehen wie normale
 HTML-Attribute mit key-value notation aus:
@@ -276,8 +281,6 @@ Weitere wichtige Attribute sind beispielsweise
 * Visibility `visible="false"`
 
 Komponente kann man beliebig in einem Entity kombinieren um gewünschte Effekte zu erzielen.
-
-[Mehr zu den Eigenschaften eines A-FRAME Entity](https://aframe.io/docs/0.3.0/core/entity.html#properties)
 
 ###### **Methoden eines Entity**
 Entity verfügen über verschiedene Methoden.
@@ -391,10 +394,7 @@ Als letztes fügen wir einen Himmel unserer Szene hinzu. Bei der Auswahl des Bil
 
 Mehr zu [Sky](https://aframe.io/docs/0.3.0/primitives/a-sky.html)
 
-
-##### 3.3.4 Interaktion mit Objekten
-
-##### 3.3.5 Asset-Management-System
+##### 3.3.4 Asset-Management-System
 
 Das Asset-Management-System bietet die Möglichkeit Assets, also (Media-)Dateien, in einem abgegrenzten Bereich vorzuladen und im Cache zu halten. Dies ist wichtig, denn das _preloaden_ der Dateien vor dem Rendern hält die Assets in einem Cache, verhindert das Fehlen von Assets in der Szene und verbessert die Performance.
 
