@@ -91,19 +91,38 @@ der Pfade für Angular und nicht für Ionic benötigt.
 
 ## Main.ts - App.ts
 
-Angular
+Angular - Main.ts
 ```
-TODO
+import './polyfills.ts';
+
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode } from '@angular/core';
+import { environment } from './environments/environment';
+import { AppModule } from './app/';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+platformBrowserDynamic().bootstrapModule(AppModule);
 ```
 
-Ionic
+Ionic - App.ts
 ```
-TODO
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
+import { AppModule } from './app.module';
+
+platformBrowserDynamic().bootstrapModule(AppModule);
 ```
 
-TODO
+Vergleicht man die beiden Hauptdateien der Projekte miteinander, sind so gut wie keine Unterschiede
+mehr feststellbar. Beide Projekte werden mit dem BootstrapModule geladen, welches bewirkt, dass
+die Anwendung mit einer Root-Komponente instantiiert wird. In einer älteren Version von Ionic war
+dies noch nicht der Fall. Hier wurde zur Instantiierung ein spezieller Bezeichner namens "@App" 
+verwendet.
 
-Weitere Unterschiede sind auf folgender Seite aufgeführt: [Using Angular 2 without Ionic 2](http://www.joshmorony.com/using-angular-2-without-ionic-2-part-1/)
+Diese und weitere Vergleiche sind auf folgender Seite aufgeführt: [Using Angular 2 without Ionic 2](http://www.joshmorony.com/using-angular-2-without-ionic-2-part-1/)
 
 # Quellen
 
