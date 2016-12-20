@@ -163,7 +163,7 @@ Die Distanz wird in Meter berechnet.
 Die Szene bildet dabei ein eigenes Entity ab. Anschließend kann die Scene über Attribute manipuliert werden. Außerdem können weitere Entities zu der Szene hinzugefügt werden.
 
 Die A-Frame Szene bringt grundlegende Interaktionsmöglichkeiten mit:
-- _WASD Tasten_ um sicht in der Szene fortzubewegen
+- _WASD Tasten_ um sich in der Szene fortzubewegen
 - _Linke-Maustaste Klick_ und _Ziehen_ um sich umzuschauen
 - umschauen mit VR-Brille
 
@@ -172,9 +172,9 @@ Mehr zur [A-Scene](https://aframe.io/docs/0.3.0/core/scene.html)
 ###### **A-Frame Entities**
 
 In A-Frame werden alle Entities als HTML-Tags <a-entity> representiert. Ein Entity stellt ein Platzhalter-Objekt dar, dem wir
-bestimmte Verhalten, Aussehen und Funktionalität zuweisen können.
+bestimmtes Verhalten, Aussehen und Funktionalität zuweisen können.
 
- Ein einfache Entity kann man mit dem Tag `<a-entity>` der Szene hinzugefügt werden, diese wird kein Erscheinung, Verhalten und Funktionalität. Jede A-Frame Entity erbt automatisch Komponente _position_, _rotation_, und _scale_.
+ Ein einfaches Entity kann man mit dem Tag `<a-entity>` der Szene hinzugefügt werden, diese besitzt noch keine Erscheinung, Verhalten und Funktionalität. Jedes A-Frame Entity hält automatisch die Komponenten _position_, _rotation_, und _scale_.
 
  Beispiel:
 
@@ -190,10 +190,10 @@ var el = document.querySelector('#mario');
 <hr>
 [Mehr über A-Frame Entities](https://aframe.io/docs/0.3.0/core/entity.html).
 
-A-Frame bietet einige vordefinierte Entitys(Primitives) an.
-Primitives haben einen vordefinierte Name und verfügen bereits über einige Komponenten
+A-Frame bietet einige vordefinierte Entities(Primitives) an.
+Primitives haben einen vordefinierten Namen und verfügen bereits über einige Komponenten
 mit default Werten.
-einige Beispiele:
+Einige Beispiele:
 - `<a-box>`
 - `<a-circle>`
 - `<a-plane>`
@@ -205,7 +205,7 @@ einige Beispiele:
 - `<a-video>`
 
 Mehr [Primitives](https://aframe.io/docs/0.3.0/primitives/).
-Außerdem gibt es die Möglichkeiten ein Entity selbst zu definieren.
+Außerdem gibt es die Möglichkeit ein Entity selbst zu definieren.
 
 **Beispiel:**
 
@@ -228,9 +228,9 @@ Components sind wiederverwendbare Objekte die einem Entity hinzugefügt werden u
 </figure>
 
 **Attribute:**
-Um einen Entity Eigenschaften zu verleihen, fügt man Komponente hinzu.
-Die kann man mittels HTML-Attribute tun.
-Beispielsweise fügen wir Attribute `width, height, depth` dem Box hinzu, die Breite (x-Achse), Höhe(y-Achse), Tiefe(z-Achse) angeben.
+Um einem Entity Eigenschaften zu verleihen, fügt man Komponenten hinzu.
+Dies kann man mittels HTML-Attributen tun.
+Beispielsweise fügen wir Attribute `width, height, depth` der Box hinzu, die Breite (x-Achse), Höhe(y-Achse), Tiefe(z-Achse) angeben.
 
 ```html
 <a-scene>
@@ -257,14 +257,14 @@ document.querySelector('a-entity[sound]').components.sound.pause();
 [Mehr zu den Eigenschaften eines A-FRAME Entity](https://aframe.io/docs/0.3.0/core/entity.html#properties)
 
 **Single-Property Component:**
-Einfache Komponente definieren nur eine eigenschaft von Entity und sehen wie normale
-HTML-Attribute mit key-value notation aus:
+Einfache Komponenten definieren nur eine Eigenschaft von einem Entity und sehen wie normale
+HTML-Attribute mit einer key-value Notation aus:
 ```html
 <a-entity position="1 2 3"></a-entity>
 ```
 **Multi-Property Component:**
-In A-Frame ist es möglich auch Komponente zu definieren, die mehere eigenschaften eines Entity beeinflussen.
-Solche werden in CSS-Inline änlichen Syntaxis dargestellt:
+In A-Frame ist es auch möglich Komponenten zu definieren, die mehrere Eigenschaften eines Entity beeinflussen.
+Solche werden in CSS-Inline ähnlicher Syntax dargestellt:
 ```html
 <a-entity light="type: point; color: crimson"></a-entity>
 ```
@@ -305,7 +305,7 @@ _setAttribute(attr)_ : Component einer Entity zuweisen
 ```javascript
 entity.setAttribute('visible', false);
 ```
-_removeAttribute(attr)_ Component Entfernen
+_removeAttribute(attr)_ Component entfernen
 ```javascript
 entity.removeAttribute('sound');
 ```
@@ -333,8 +333,8 @@ entity.addEventListener('child-attached', function (evt) {
 });
 ```
 ###### **Animation**
-A-Frame erlaubt die Entity zu animieren.
-Zum Beispiel können wir die Box animieren, zum Beispiel in der Farbe.
+A-Frame erlaubt Entities zu animieren.
+Zum Beispiel können wir die Box animieren, beispielsweise in der Farbe.
 
 ```html
 <a-box width="4" height="10" depth="2">
@@ -384,7 +384,7 @@ Mehr zu [Licht](https://aframe.io/docs/0.3.0/components/light.html)
 <a-sky color="#73F7DD"></a-sky>
 ```
 
-Über den Asset-Manager können Bilder geladen werden(s. 3.3.5).
+Über den Asset-Manager können Bilder geladen werden(s. 3.3.4).
 
 ```html
 <a-sky src="Asset-ID"></a-sky>
@@ -406,8 +406,9 @@ Folgende Assets HTML-Elemente werden für A-FRAME definiert:
 * `<audio>` - Audio Dateien
 * `<img>` - Bilder (Texturen)
 * `<video>` - Video (Texturen)
+* `<a-mixin>` - s. 3.3.5
 
-Diese Assets können dann innerhalb der Scene Entities benutzt werden.
+Diese Assets können dann innerhalb der Entities benutzt werden.
 
 ```html
 <a-scene>
