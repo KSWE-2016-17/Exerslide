@@ -1,6 +1,6 @@
 ---
 title: Durak Datenmodell
-chapter: Datenmodell
+chapter: Electron
 id: ETN_Datenmodell
 ---
 

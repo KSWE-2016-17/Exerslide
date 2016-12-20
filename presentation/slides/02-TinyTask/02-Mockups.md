@@ -6,65 +6,77 @@ chapter: TinyTask
 # 1\. Login
 
 <figure id="login">
-  <img src="./images/login.png">
+  <img src="./images/mockups/login.png">
 </figure>
 
-# 2\. Start
+# 2\. Login Registrieren
+
+<figure id="login_reg">
+  <img src="./images/mockups/login_registrieren.png">
+</figure>
+
+# 3\. Login Dienst
+
+<figure id="login_alt">
+  <img src="./images/mockups/login_alternativ.png">
+</figure>
+
+# 4\. Start
 
 <figure id="start">
-  <img src="./images/Start.png">
+  <img src="./images/mockups/Start.png">
 </figure>
 
-# 3\. Bewerber aussuchen
+# 5\. Bewerber aussuchen
 
 <figure id="bewerb_suchen">
-  <img src="./images/Bewerber_aussuchen.png">
+  <img src="./images/mockups/Bewerber_aussuchen.png">
 </figure>
 
-# 4\. Suchen
+# 6\. Suchen
 
 <figure id="suchen">
-  <img src="./images/Suchen.png">
+  <img src="./images/mockups/Suchen.png">
 </figure>
 
-# 5\. Erstellen
+# 7\. Erstellen
 
 <figure id="erstellen">
-  <img src="./images/Erstellen.png">
+  <img src="./images/mockups/Erstellen.png">
 </figure>
 
-# 6\. Taskansicht Angenommen
+# 8\. Taskansicht Angenommen
 
 <figure id="taskansicht_angenommen">
-  <img src="./images/Taskansicht_Angenommen.png">
+  <img src="./images/mockups/Taskansicht_Angenommen.png">
 </figure>
 
-# 7\. Taskansicht Auftragnehmer
+# 9\. Taskansicht Auftragnehmer
 
 <figure id="taskansicht_AN">
-  <img src="./images/Taskansicht_AN.png">
+  <img src="./images/mockups/Taskansicht_AN.png">
 </figure>
 
-# 8\. Profil
+# 10\. Profil
 
 <figure id="profil">
-  <img src="./images/Profil.png">
+  <img src="./images/mockups/Profil.png">
 </figure>
 
-# 9\. Map
+# 11\. Map
 
 <figure id="map">
-  <img src="./images/Map.png">
+  <img src="./images/mockups/Map.png">
 </figure>
 
-# 10\. Taskende
+# 12\. Taskende
 
 <figure id="taskende">
-  <img src="./images/Taskende.png">
+  <img src="./images/mockups/Taskende.png">
 </figure>
 
-# 11\. Chat
+# 12\. Chat
 
 <figure id="chat">
-  <img src="./images/Chat.png">
+  <img src="./images/mockups/Chat.png">
 </figure>
