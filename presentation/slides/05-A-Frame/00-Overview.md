@@ -7,14 +7,30 @@ chapter: A-Frame
 
 ## Dokumentation: A-FRAME
 
+## Inhaltsverzeichnis
+1. Was ist VirtualReality
+2. Beispiele
+3. A-FRAME
+3.1 Was ist A-FRAME?
+3.2 An wen richtet sich A-FRAME?
+3.3 Wie funktioniert A-FRAME?
+3.3.1 Entity-Component-System
+3.3.2 A-FRAME einbinden
+3.3.3 A-FRAME Konzepte
+3.3.3.1 A-FRAME Konzepte-Entities
+3.3.3.2 A-FRAME Konzepte-Components
+3.3.3 A-FRAME Konzepte Fortführung
+3.3.4 Asset-Management-System
+3.3.5 Mixins
+3.3.6 Wichtige/Nützliche Tools/Components
+3.4 Ausblick
+
 ### 1. Was ist VirtualReality?
 
-VirtualReality ist eine computer generierte interaktive Umwelt die der Nutzer
-wahrnehmen, erforschen und mit der er interagieren kann. Die künstliche Umwelt
+VirtualReality ist eine computergenerierte interaktive Umwelt die der Nutzer
+wahrnehmen, erforschen und mit welcher er interagieren kann. Die künstliche Umwelt
 wird lebendiger, je besser die Sinne des Nutzers stimuliert werden. Das Gefühl
 der Immersion ist am stärksten wenn alle Sinne angesprochen werden.
-Sehen, Fühlen, Hören, Schmecken, Riechen. Zumindest die ersten 3 Sinne sind die
-Sinne die am stärksten fokussiert werden.
 
 Die gängige Technik der heutigen VR-Headsets sind 2 gekrümmte Linsen die einen
 Bildschirm vergrößern und verzerren. Auf diese Weise erhalten die beiden Augen
@@ -44,6 +60,7 @@ Technologien
 Entertainment
 * [Chernobyl-VR (Chernobyl über VR besuchen)](http://www.chernobylvrproject.com/en/)
 * [Project Arena (VR-Sport Tennis-Spiel)](https://www.youtube.com/watch?v=SIfGuPW_mMs)
+* [Public Speaking (VR Reden üben)](https://play.google.com/store/apps/details?id=com.virtualSpeech.android)
 
 ### 3. A-FRAME
 
@@ -51,7 +68,7 @@ Entertainment
 
 [A-Frame](https://aframe.io/) ist ein Web Framework um die Virtual Reality in den Webbrowser zu bringen. Es werden Desktop und mobile Plattformen unterstützt sowie VR-Brillen. A-Frame nutzt dafür HTML sowie das Entity-Component-System.
 
-Durch das Entity-Component-System können Entities einfach eingefügt und in ihrem Verhalten und Aussehen verändert werden. Diese können um Components erweitert werden was zusätzliche Funktionalitäten ermöglicht. Dadurch können Entities viele verschiedene Eigenschaften besitzen die von anderen Components beigesteuert werden.
+Durch das Entity-Component-System können Entities einfach eingefügt und in ihrem Verhalten und Aussehen verändert werden. Diese können um Components erweitert werden, was zusätzliche Funktionalitäten ermöglicht. Dadurch können Entities viele verschiedene Eigenschaften besitzen die von anderen Components beigesteuert werden.
 
 A-Frame ist aktuell in der Version 0.3.0 verfügbar und wird durch die Community stetig erweitert und gefördert.
 
@@ -78,16 +95,16 @@ A-Frame nutzt HTML um Szenerien zu visualisieren. Zusätzlich wird das Entity-Co
 leicht über DOM nutzbar ([s. 3.3.1](/#3.3.1 Entity-Component-System)).
 ##### 3.3.1 Entity-Component-System
 
-A-FRAME basiert auf dem [Entity-Component-System Design-Pattern](https://en.wikipedia.org/wiki/Entity%E2%80%93component%E2%80%93system).
+A-FRAME basiert auf dem **[Entity-Component-System Design-Pattern](https://en.wikipedia.org/wiki/Entity%E2%80%93component%E2%80%93system)**.
 
 Das Entity-Component-System Pattern wird häufig in der Spieleentwicklung genutzt. Durch das Pattern wird eine hohe Flexbilität ermöglicht. Jedes existierende Objekt in der (Spiel-)Welt ist ein Entity. Ihr Verhalten wird durch die Components bestimmt. Dabei kann ein Entity beliebige viele Components halten und so in seinem Verhalten und Aktionen definiert werden. Dies ermöglicht Änderungen des Verhaltens des Objekts **während der Laufzeit**, indem man Components entfernt oder neue Components hinzufügt (ähnlich wie bei Strategie Pattern).
 
 Durch das Nutzen des Patterns entfällt die strikte hierarchische Struktur der Vererbung, die komplexer wird, je mehr Verhaltensmuster eingefügt werden müssten.
 
-Folglich basiert das ECS-Pattern sehr stark auf dem "Composition over Inheritance" Prinzip.
+Folglich basiert das ECS-Pattern sehr stark auf dem **"Composition over Inheritance"** Prinzip.
 
-Das ["Composition over Inheritance"](https://en.wikipedia.org/wiki/Composition_over_inheritance) Prinzip ist ein Prinzip aus der OOP. Ziel ist es, Klassen ein Polymorphisches Verhalten, mit Code Wiederverwendung, beizubringen indem Klassen in ihrem Verhalten durch Objekte definiert werden die sie von anderen Klassen erzeugen und beinhalten/tragen (Composition). Diese Objekte bestimmen dann das Verhalten.
-Die ungewünschte Alternative wäre es, das Verhalten durch Vererbung zu definieren (Inheritance).
+Das ["Composition over Inheritance"](https://en.wikipedia.org/wiki/Composition_over_inheritance) Prinzip ist ein Prinzip aus der OOP. Ziel ist es, Klassen ein Polymorphisches Verhalten, mit Code Wiederverwendung, beizubringen, indem Klassen in ihrem Verhalten durch Objekte definiert werden die sie von anderen Klassen erzeugen und beinhalten/tragen **(Composition)**. Diese Objekte bestimmen dann das Verhalten.
+Die ungewünschte Alternative wäre es, das Verhalten durch Vererbung zu definieren **(Inheritance)**.
 
 <figure id="imgCompOverInher">
   <img src="./images/comp.png"/>
@@ -129,12 +146,12 @@ A-FRAME Objekte werden erst sichtbar wenn sie einer Szene inneliegen.
 Innerhalb dieser Szene können nun Objekte eingefügt werden. Die VR ist ein
 klassischer 3D-Raum in dem ihr über die X,Y,Z Koordinaten Objekte einfügen könnt.
 
-Die Kooredinatensystem in A-Frame sieht folglich aus:
+Das Koordinatensystem in A-Frame sieht folglich so aus:
 <figure id="imgCompOverInher">
   <img src="./images/Coordinates.png"/>
 </figure>
 
-Die Szene bildet dabei ein eigenes Entity ab. Folglich kann die Scene über Attribute manipuliert werden wie die folgenden Entities.
+Die Szene bildet dabei ein eigenes Entity ab. Folglich kann die Scene über Attribute manipuliert werden, wie die folgenden Entities.
 
 Mehr zur [A-Scene](https://aframe.io/docs/0.3.0/core/scene.html)
 
@@ -162,6 +179,10 @@ Weitere wichtige Attribute sind beispielsweise
 * Position `position="3 2 5"`
 * Rotation `rotation="90 0 45"`
 * Color    `color="#FFFFFF"`
+
+Eine Box ist wie die anderen Objekte ein Entity. Es nimmt Eigenschaften auf - Components. Bevor wir die Szene erweitern erarbeiten wir zunächst einige Grundlagen zu Entities und Components.
+
+##### 3.3.3.1 A-Frame Konzepte-Entities
 
 **Entities**
 
@@ -242,6 +263,8 @@ entity.addEventListener('child-attached', function (evt) {
 
 <hr>
 
+##### 3.3.3.2 A-Frame Konzepte-Components
+
 **Components**
 
 Components sind wiederverwendbare Objekte die einem Entity hinzugefügt werden und diesem dann ihr Verhalten/ihre Eigenschaften hinzufügen. Aus vielen kleinen Components kann so eine komplexe Entität erzeugt werden.
@@ -283,7 +306,11 @@ Es gibt Single-Property-Components und Multi-Property-Components
 
 Components bieten eine Vielzahl an Optionen und Methoden. Mehr auf [AFRAME-Components](https://aframe.io/docs/0.3.0/core/component.html)
 
+Mit den Grundlagen im ECS-Pattern und ihrer Anwendung in A-FRAMGE können wir nun unsere Szene erweitern.
+
 <hr>
+
+##### 3.3.3 A-Frame Konzepte Fortführung
 
 **Animation**
 
@@ -348,10 +375,7 @@ Als letztes fügen wir einen Himmel unserer Szene hinzu. Bei der Auswahl des Bil
 
 Mehr zu [Sky](https://aframe.io/docs/0.3.0/primitives/a-sky.html)
 
-
-##### 3.3.4 Interaktion mit Objekten
-
-##### 3.3.5 Asset-Management-System
+##### 3.3.4 Asset-Management-System
 
 Das Asset-Management-System bietet die Möglichkeit Assets, also (Media-)Dateien, in einem abgegrenzten Bereich vorzuladen und im Cache zu halten. Dies ist wichtig, denn das _preloaden_ der Dateien vor dem Rendern hält die Assets in einem Cache, verhindert das Fehlen von Assets in der Szene und verbessert die Performance.
 
@@ -384,7 +408,7 @@ Diese Assets können dann innerhalb der Scene Entities benutzt werden.
 </a-scene>
 ```
 
-##### 3.3.6 Mixins
+##### 3.3.5 Mixins
 
 Mixins bieten die Möglichkeit mehrere Components zusammenzufassen und wiederzuverwenden (Sammelbecken von Components). Sie werden im Asset-Management-System über das `<a-mixin></a-mixin>` Element eingebunden. Entities die das Mixin einbinden enthalten folglich die Eigenschaften der Mixin-Components.
 
@@ -460,7 +484,7 @@ Reihenfolge
 
 `mixin="1.eingebunden 2.eingebunden 3.eingebunden"` => 4.Entity Eigenschaften eingebunden
 
-##### 3.3.7 Wichtige/Nützliche Tools/Components
+##### 3.3.6 Wichtige/Nützliche Tools/Components
 
 **Tools**
 
