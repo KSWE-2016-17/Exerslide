@@ -7,6 +7,10 @@ chapter: A-Frame
 
 ## Dokumentation: A-FRAME
 
+<figure id="imgCompOverInher">
+  <img src="./images/a-frame logo.png"/>
+</figure>
+
 ## Inhaltsverzeichnis
 1. Was ist VirtualReality
 2. Beispiele
@@ -136,6 +140,10 @@ A-FRAME ist nun initialisiert.
 ##### 3.3.3 A-Frame Konzepte
 
 **Szene**
+
+<figure id="imgCompOverInher">
+  <img src="./images/a-frame scene.png"/>
+</figure>
 
 A-FRAME Objekte werden erst sichtbar wenn sie einer Szene inneliegen.
 
@@ -537,4 +545,10 @@ Elementar und bereits genannt:
 
 ##### 3.4 Ausblick
 
-A-FRAME erreicht Mitte Januar seinen 1. Geburtstag. Bis dahin soll Version 0.4.0 released werden.
+A-FRAME ist am 16.12.16 auf Version 0.4.0 geupdated worden. A-FRAME zielt weiterhin darauf ab 'Community-Driven'
+ zu bleiben.
+
+
+ <figure id="imgCompOverInher">
+   <img src="./images/a-frame community.png"/>
+ </figure>
