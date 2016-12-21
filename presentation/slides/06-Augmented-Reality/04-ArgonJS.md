@@ -16,13 +16,16 @@ Die Entwickler des ArgonJS Frameworks gehen davon aus das (mobile) Browser in Zu
 
 Es gibt 3 Kernabstaktionsschichten im ArgonJS Framework:
 
-* Reality Augmentor - Bild der Realität erweitern
-* Reality View - Realität darstellen
-* Reality Manager - verwaltet die Erweiterung der Reality View mit ein oder mehreren Reality Augmentors
+* **Reality Augmentor** - Bild der Realität erweitern
+* **Reality View** - Realität darstellen
+* **Reality Manager** - verwaltet die Erweiterung der Reality View mit ein oder mehreren Reality Augmentors
 
 In früheren AR Anwendungen wurden diese 3 Zuständigkeiten nicht klar voneinander getrennt, dieser "Seperation of Concerns" Ansatz sorgt aber für eine gute Austauschbarkeit der verschiedenen Module.
 
-###weitere Bestandteile
+![ArgonsJS Architektur](./images/concepts/argonjs-framework.png "Architektur")
 
-* cesium.js - Cesium Entitäten beschreiben Platzierung von 3D Objekten auf der Erde
-* three.js - Javascript 3D Bibliothek
+
+## weitere Bestandteile
+
+* **cesium.js** - Cesium Entitäten beschreiben Platzierung von 3D Objekten auf der Erde
+* **three.js** - Javascript 3D Bibliothek
