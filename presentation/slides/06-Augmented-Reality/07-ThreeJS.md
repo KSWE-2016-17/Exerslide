@@ -9,10 +9,9 @@ Three.js ist eine objektorientierte JavaScript-Bibliothek für 3D-Grafiken, welc
 
 Three.js nutzt diverse Konzepte der Computergrafik. Darunter zählen 3D-Objekte, Szenen, Transformationen, Lichtquellen, Material- und Textureigenschaften eines Objektes und Kamera.
 
-# Was ist WebGl?
+# Was ist WebGL?
 WebGL ist eine Variante des OpenGL, welche speziell für den Webbrowser entwickelt wurde. Ähnlich wie in OpenGL werden also Objekte mit Hilfe von Dreiecken abgebildet.
 
-## Objekterstellung in WebGL
 In WebGL und in der Computergrafik werden Objekte abgebildet, indem ihre Eckpunkte (in der 3D-Welt wird von Vertex (Singular) oder Vertices (Plural) gesprochen) der Szene hinzugefügt werden. So werden für das Abbilden eines Dreieckes drei Vertices benötigt. Aus diesen Vertices wird dann ein sogenanntes Face erstellt.
 
 Three.js bietet die grundlegenden geometrischen Figuren wie Würfel, Kegel oder Kugeln von Haus aus an.
@@ -38,7 +37,7 @@ Zum Erstellen einer Szene reicht es, eine *HTML*-Datei mit folgendem Inhalt zu e
   </body>
 </html>
 ```
-Dabei werden die Bibliothek *three.js* und ein weiteres Skript zur Generierung einer Szene, hier ein rotierender Würfel, in die *HTML*-Datei eingebunden.
+Dabei werden die Bibliothek [*three.js*](https://cdnjs.cloudflare.com/ajax/libs/three.js/r83/three.min.js) und ein weiteres Skript zur Generierung einer Szene, hier ein rotierender Würfel, in die *HTML*-Datei eingebunden.
 
 ## Erstellen einer Szene
 Eine Szene dient der Repräsentation eines Objektes in der 3D-Welt und beinhaltet Informationen zu der Lichtquelle, den Objekten und der Kamera. Die Szene wird aus der Perspektive der Kamera betrachtet, welche dazu beiträgt, das Erstellen einer Grafik der 3D-Welt durch den Renderer zu ermöglichen.
