@@ -3,17 +3,44 @@ title: Datenmodell
 chapter: AngularJS
 ---
 
-## Medium
+## The Open Movie Database
 | Name | Typ |
 | :--- | :---- |
-|  ID | integer |
-| API-Link | String |
-| Art von Medium | String |
-| Anzahl Aufrufe | integer |
-| Letzter Aufruf | date |
+|  Titel | string |
+|  Year | integer |
+|  Rated | char |
+|  Released | date |
+|  Runtime | string |
+|  Genre | string |
+|  Director | string |
+|  Writer | string |
+|  Actors | string |
+|  Plot | string |
+|  Language | string |
+|  Country | string |
+|  Awards | string |
+|  Poster | string |
+|  Metascore | integer |
+|  IDimdbRating| double |
+|  imdbVotes | integer |
+|  imdbID| string |
+|  Type | string |
+|  Response | boolean |
 
 ## Suchbegriff
- Name | Typ |
+Nach Titel
+| Name | Typ |
 | :--- | :---- |
-|  ID | integer |
-| Begriff | String |
+|  Title | string |
+| Year | integer / NULL |
+| Plot | Short / Full |
+| Response | JSON / XML |
+
+Nach IMDB ID
+| Name | Typ |
+| :--- | :---- |
+| imdbID | string |
+| Plot | Short / Full |
+| Response | JSON / XML |
+
+
