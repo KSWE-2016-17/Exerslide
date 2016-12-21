@@ -1,9 +1,8 @@
 ---
-title: UseCaseDiagramme
+title: Use-Case-Diagramme
 chapter: Electron
 id: ETN_UseCaseDiagramme
 ---
-# Use-Case-Diagramme
 
 ## Gesamtsystem
 ![picture](./img/UseCase_1_Durak.png)

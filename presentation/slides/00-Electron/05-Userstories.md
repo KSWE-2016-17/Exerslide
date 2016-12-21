@@ -1,8 +1,7 @@
 ---
-title: Userstories
+title: User Stories
 chapter: Electron
 ---
-# User Stories
   * Ich möchte als Benutzer eine Partie gegen Computer Gegner spielen, so dass ich zu jederzeit eine Runde spielen kann, auch wenn kein Menschlicher Spieler verfügbar ist
   * Ich möchte als Benutzer eine online Übersicht an verfügbaren Servern einsehen können, so dass ich ggf. mit Freunden spielen kann
   * Ich möchte als Benutzer einem befreundetem Benutzer folgen können, sodass ich benachritigt werde sobald er online ist
