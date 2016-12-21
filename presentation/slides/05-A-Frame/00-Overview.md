@@ -1,20 +1,38 @@
 ---
-title: Overview
+title: Übersicht
 chapter: A-Frame
+id: aframe-overview
 ---
 ## Projekt: [MyMemorySpace](https://github.com/oxanaZh/MyMemorySpace.git)
 ### Über das Projekt
 
 ## Dokumentation: A-FRAME
 
+<figure id="imgCompOverInher">
+  <img src="./images/a-frame logo.png"/>
+</figure>
+
+## Inhaltsverzeichnis
+1. Was ist VirtualReality
+2. Beispiele
+3. A-FRAME
+3.1 Was ist A-FRAME?
+3.2 An wen richtet sich A-FRAME?
+3.3 Wie funktioniert A-FRAME?
+3.3.1 Entity-Component-System
+3.3.2 A-FRAME einbinden
+3.3.3 A-FRAME Konzepte
+3.3.4 Asset-Management-System
+3.3.5 Mixins
+3.3.6 Wichtige/Nützliche Tools/Components
+3.4 Ausblick
+
 ### 1. Was ist VirtualReality?
 
-VirtualReality ist eine computer generierte interaktive Umwelt die der Nutzer
-wahrnehmen, erforschen und mit der er interagieren kann. Die künstliche Umwelt
+VirtualReality ist eine computergenerierte interaktive Umwelt die der Nutzer
+wahrnehmen, erforschen und mit welcher er interagieren kann. Die künstliche Umwelt
 wird lebendiger, je besser die Sinne des Nutzers stimuliert werden. Das Gefühl
 der Immersion ist am stärksten wenn alle Sinne angesprochen werden.
-Sehen, Fühlen, Hören, Schmecken, Riechen. Zumindest die ersten 3 Sinne sind die
-Sinne die am stärksten fokussiert werden.
 
 Die gängige Technik der heutigen VR-Headsets sind 2 gekrümmte Linsen die einen
 Bildschirm vergrößern und verzerren. Auf diese Weise erhalten die beiden Augen
@@ -30,7 +48,8 @@ ihre Debüts vor kurzer Zeit.
 Dabei können einige Headsets mittels zusätzlicher Technologie eine Person in einem
 kleinen Raum orten und diese dann innerhalb von Spielen verarbeiten.
 
-### 2. Beispiele
+###  2. Beispiele
+
 Headsets
 * [HTC-VIVE (Valve&HTC)](https://www.vive.com/de/)
 * [Sony VR (Sony)](https://www.playstation.com/de-de/explore/playstation-vr/)
@@ -44,6 +63,7 @@ Technologien
 Entertainment
 * [Chernobyl-VR (Chernobyl über VR besuchen)](http://www.chernobylvrproject.com/en/)
 * [Project Arena (VR-Sport Tennis-Spiel)](https://www.youtube.com/watch?v=SIfGuPW_mMs)
+* [Public Speaking (VR Reden üben)](https://play.google.com/store/apps/details?id=com.virtualSpeech.android)
 
 ### 3. A-FRAME
 
@@ -51,9 +71,9 @@ Entertainment
 
 [A-Frame](https://aframe.io/) ist ein Web Framework um die Virtual Reality in den Webbrowser zu bringen. Es werden Desktop und mobile Plattformen unterstützt sowie VR-Brillen. A-Frame nutzt dafür HTML sowie das Entity-Component-System.
 
-Durch das Entity-Component-System können Entities einfach eingefügt und in ihrem Verhalten und Aussehen verändert werden. Diese können um Components erweitert werden was zusätzliche Funktionalitäten ermöglicht. Dadurch können Entities viele verschiedene Eigenschaften besitzen die von anderen Components beigesteuert werden.
+Durch das Entity-Component-System können Entities einfach eingefügt und in ihrem Verhalten und Aussehen verändert werden. Diese können um Components erweitert werden, was zusätzliche Funktionalitäten ermöglicht. Dadurch können Entities viele verschiedene Eigenschaften besitzen die von anderen Components beigesteuert werden.
 
-A-Frame ist aktuell in der Version 0.3.0 verfügbar und wird durch die Community stetig erweitert und gefördert.
+A-Frame ist aktuell in der Version 0.4.0 verfügbar und wird durch die Community stetig erweitert und gefördert.
 
 A-Frame Code Beispiel:
 ```html
@@ -64,6 +84,7 @@ A-Frame Code Beispiel:
   </a-scene>
 </body>
 ```
+_Hinweis: Hier wird A-Frame in der Version 0.3.0 betrachtet_
 
 #### 3.2 An wen richtet sich A-FRAME?
 
@@ -74,13 +95,11 @@ A-Frame wird vom Mozilla-VR-Team entwickelt und richtet sich an die Web-Entwickl
 A-Frame basiert auf [THREE.js](https://threejs.org/). Einer Cross-Browser Javascript API mit der man 3D Grafiken/Animationen
 im Web Browser visualisieren kann. THREE.js basiert dabei auf [WebGL](https://www.khronos.org/webgl/).
 
-A-Frame nutzt HTML um Szenerien zu visualisieren. Zusätzlich wird das Entity-Component-System
-leicht über DOM nutzbar ([s. 3.3.1](/#3.3.1 Entity-Component-System)).
+A-Frame erweitert THREE.js um das auf HTML basierende Entity-Component-System. Somit können Szenerien einfacher und schneller visualisiert und verwaltet werden. Zusätzlich wird das Entity-Component-System
+leicht über DOM nutzbar ([s. 3.3.1]).
 ##### 3.3.1 Entity-Component-System
 
-A-FRAME basiert auf dem [Entity-Component-System Design-Pattern](https://en.wikipedia.org/wiki/Entity%E2%80%93component%E2%80%93system).
-
-Das Entity-Component-System Pattern wird häufig in der Spieleentwicklung genutzt. Durch das Pattern wird eine hohe Flexbilität ermöglicht. Jedes existierende Objekt in der (Spiel-)Welt ist ein Entity. Ihr Verhalten wird durch die Components bestimmt. Dabei kann ein Entity beliebige viele Components halten und so in seinem Verhalten und Aktionen definiert werden. Dies ermöglicht Änderungen des Verhaltens des Objekts **während der Laufzeit**, indem man Components entfernt oder neue Components hinzufügt (ähnlich wie bei Strategie Pattern).
+Das [Entity-Component-System Design-Pattern](https://en.wikipedia.org/wiki/Entity%E2%80%93component%E2%80%93system)(ECS-Pattern) wird häufig in der Spieleentwicklung genutzt. Durch das Pattern wird eine hohe Flexbilität ermöglicht. Jedes existierende Objekt in der (Spiel-)Welt ist ein Entity. Ihr Verhalten wird durch die Components bestimmt. Dabei kann ein Entity beliebige viele Components halten und so in seinem Verhalten und Aktionen definiert werden. Dies ermöglicht Änderungen des Verhaltens des Objekts **während der Laufzeit**, indem man Components entfernt oder neue Components hinzufügt (ähnlich wie bei Strategie Pattern).
 
 Durch das Nutzen des Patterns entfällt die strikte hierarchische Struktur der Vererbung, die komplexer wird, je mehr Verhaltensmuster eingefügt werden müssten.
 
@@ -89,11 +108,12 @@ Folglich basiert das ECS-Pattern sehr stark auf dem "Composition over Inheritanc
 Das ["Composition over Inheritance"](https://en.wikipedia.org/wiki/Composition_over_inheritance) Prinzip ist ein Prinzip aus der OOP. Ziel ist es, Klassen ein Polymorphisches Verhalten, mit Code Wiederverwendung, beizubringen indem Klassen in ihrem Verhalten durch Objekte definiert werden die sie von anderen Klassen erzeugen und beinhalten/tragen (Composition). Diese Objekte bestimmen dann das Verhalten.
 Die ungewünschte Alternative wäre es, das Verhalten durch Vererbung zu definieren (Inheritance).
 
+Composition over Inheritance Beispiel:
+
 <figure id="imgCompOverInher">
   <img src="./images/comp.png"/>
 </figure>
 
-Folglich der Begriff des "Composition over Inheritance".
 
 Der Vorteil ist also dass wenn wir ein Entity um Verhalten erweitern möchten, wir nicht eine weitere Vererbungshierarchie hinzufügen müssen. Ebenso können leicht Verhaltensmuster erzeugt werden, die dann von allen Entitites benutzt werden können.
 
@@ -118,7 +138,11 @@ A-FRAME ist nun initialisiert.
 
 ##### 3.3.3 A-Frame Konzepte
 
-**Szene**
+###### **Szene**
+
+<figure id="imgCompOverInher">
+  <img src="./images/a-frame scene.png"/>
+</figure>
 
 A-FRAME Objekte werden erst sichtbar wenn sie einer Szene inneliegen.
 
@@ -129,59 +153,97 @@ A-FRAME Objekte werden erst sichtbar wenn sie einer Szene inneliegen.
 Innerhalb dieser Szene können nun Objekte eingefügt werden. Die VR ist ein
 klassischer 3D-Raum in dem ihr über die X,Y,Z Koordinaten Objekte einfügen könnt.
 
-Die Kooredinatensystem in A-Frame sieht folglich aus:
+Das Koordinatensystem in A-Frame sieht folglich so aus:
 <figure id="imgCompOverInher">
   <img src="./images/Coordinates.png"/>
 </figure>
 
-Die Szene bildet dabei ein eigenes Entity ab. Folglich kann die Scene über Attribute manipuliert werden wie die folgenden Entities.
+Die Distanz wird in Meter berechnet.
+
+Die Szene bildet dabei ein eigenes Entity ab. Anschließend kann die Scene über Attribute manipuliert werden. Außerdem können weitere Entities zu der Szene hinzugefügt werden.
+
+Die A-Frame Szene bringt grundlegende Interaktionsmöglichkeiten mit:
+- _WASD Tasten_ um sich in der Szene fortzubewegen
+- _Linke-Maustaste Klick_ und _Ziehen_ um sich umzuschauen
+- umschauen mit VR-Brille
 
 Mehr zur [A-Scene](https://aframe.io/docs/0.3.0/core/scene.html)
 
-**Box-Model**
+###### **A-Frame Entities**
+
+In A-Frame werden alle Entities als HTML-Tags <a-entity> representiert. Ein Entity stellt ein Platzhalter-Objekt dar, dem wir
+bestimmtes Verhalten, Aussehen und Funktionalität zuweisen können.
+
+ Ein einfaches Entity kann man mit dem Tag `<a-entity>` der Szene hinzugefügt werden, diese besitzt noch keine Erscheinung, Verhalten und Funktionalität. Jedes A-Frame Entity hält automatisch die Komponenten _position_, _rotation_, und _scale_.
+
+ Beispiel:
+
+ ```html
+ <a-entity id="mario"></a-entity>
+ ```
+
+Um die Eigenschaften und Methoden eines Entities zu lesen muss man nur mittels DOM-Parser das HTML-Element aufrufen.
+
+```javascript
+var el = document.querySelector('#mario');
+```
+<hr>
+[Mehr über A-Frame Entities](https://aframe.io/docs/0.3.0/core/entity.html).
+
+A-Frame bietet einige vordefinierte Entities(Primitives) an.
+Primitives haben einen vordefinierten Namen und verfügen bereits über einige Komponenten
+mit default Werten.
+Einige Beispiele:
+- `<a-box>`
+- `<a-circle>`
+- `<a-plane>`
+- `<a-sphere>`
+- `<a-camera>`
+- `<a-cursor>`
+- `<a-image>`
+- `<a-sound>`
+- `<a-video>`
+
+Mehr [Primitives](https://aframe.io/docs/0.3.0/primitives/).
+Außerdem gibt es die Möglichkeit ein Entity selbst zu definieren.
+
+**Beispiel:**
 
 Fügen wir nun ein Entity ein um die Szene nicht leer zu lassen.
+
+```html
+<a-scene>
+  <a-box></a-box>
+</a-scene>
+```
+
+Eine Box ist wie der Name schon angibt ein 3D Rechteck. Es ist ein Entity das den Ursprungs-Entity in seiner Geometrie bereits beschreibt (`geometry="primitive: box;`).
+
+###### **A-Frame Components**
+
+Components sind wiederverwendbare Objekte die einem Entity hinzugefügt werden und diesem dann ihr Verhalten/ihre Eigenschaften hinzufügen. Aus vielen kleinen Components kann so eine komplexe Entität erzeugt werden.
+
+<figure id="imgComponents">
+  <img src="./images/components.jpg"/>
+</figure>
+
+**Attribute:**
+Um einem Entity Eigenschaften zu verleihen, fügt man Komponenten hinzu.
+Dies kann man mittels HTML-Attributen tun.
+Beispielsweise fügen wir Attribute `width, height, depth` der Box hinzu, die Breite (x-Achse), Höhe(y-Achse), Tiefe(z-Achse) angeben.
 
 ```html
 <a-scene>
   <a-box color="#6173F4" width="4" height="10" depth="2"></a-box>
 </a-scene>
 ```
-
-Eine Box ist wie der Name schon angibt ein 3D Rechteck. Es ist ein Entity dass den Ursprungs-Entity in seiner Geometrie bereits beschreibt (`geometry="primitive: box;`).
-
-**Attribute**
-
-Über die HTML-Attribute kann man der Box Eigenschaften (**Components**) dynamisch einbinden. Farbe, Form, Sichtbarkeit, je nachdem
+Mit Javascript kann man die Komponente dynamisch einbinden. Farbe, Form, Sichtbarkeit, je nachdem
 welche Funktionen man von A-FRAME selber oder Fremd-Plugins nutzen möchte.
 
-`width, height, depth` geben beispielsweise die Maße in Breite (x-Achse), Höhe(y-Achse), Tiefe(z-Achse) an.
-
-Weitere wichtige Attribute sind beispielsweise
-
-* Position `position="3 2 5"`
-* Rotation `rotation="90 0 45"`
-* Color    `color="#FFFFFF"`
-
-**Entities**
-
-Um die Eigenschaften und Methoden eines Entities zu lesen muss man nur mittels DOM-Parser das HTML-Element aufrufen.
-
-```html
-<a-entity id="mario"></a-entity>
-```
-
-```javascript
-var el = document.querySelector('#mario');
-```
-
-<hr>
-
-Eigenschaften eines `Entity` (einige Beispiele)
-
-_components_ `<a-entity>.components` ist ein Objekt aus Components dass dem Entity anhängt.
+ `<a-entity>.components` ist ein Objekt aus Components dass dem Entity anhängt.
 Damit kann auf alle Components eines Entities zugegriffen werden (Eigenschaften, Methoden).
 
+Nutzung:
 ```javascript
 //Material-Object aulesen
 var material = document.querySelector('a-entity[material]').components.material.material;
@@ -194,7 +256,35 @@ document.querySelector('a-entity[sound]').components.sound.pause();
 
 [Mehr zu den Eigenschaften eines A-FRAME Entity](https://aframe.io/docs/0.3.0/core/entity.html#properties)
 
-<hr>
+**Single-Property Component:**
+Einfache Komponenten definieren nur eine Eigenschaft von einem Entity und sehen wie normale
+HTML-Attribute mit einer key-value Notation aus:
+```html
+<a-entity position="1 2 3"></a-entity>
+```
+**Multi-Property Component:**
+In A-Frame ist es auch möglich Komponenten zu definieren, die mehrere Eigenschaften eines Entity beeinflussen.
+Solche werden in CSS-Inline ähnlicher Syntax dargestellt:
+```html
+<a-entity light="type: point; color: crimson"></a-entity>
+```
+Weitere wichtige Attribute sind beispielsweise
+
+* Position `position="3 2 5"` (x,y,z)
+* Rotation `rotation="90 0 45"`(x,y,z)
+* Color    `color="#FFFFFF"`
+* Scale `scale="0.5 1 2"`(x,y,z)
+* Geometry `geometry="primitive: box"`
+* Camera `camera="userHeight: 1.6"`
+* Cursor `cursor="fuse: true; fuseTimeout: 500"`
+* Material `material="shader: ocean; color: blue; wave-height: 10"`
+* Visibility `visible="false"`
+
+Komponente kann man beliebig in einem Entity kombinieren um gewünschte Effekte zu erzielen.
+
+###### **Methoden eines Entity**
+Entity verfügen über verschiedene Methoden.
+Beispielsweise kann man mit Javascript Attribute eines Entity dynamisch manipulieren.
 
 Methoden eines `Entity` (einige Beispiele)
 
@@ -211,14 +301,17 @@ entity.getAttribute('data-position');
 // >> "0 1 1"
 ```
 
-_setAttribute(attr)_ Component einer Entity zuweisen
+_setAttribute(attr)_ : Component einer Entity zuweisen
 ```javascript
 entity.setAttribute('visible', false);
 ```
-
+_removeAttribute(attr)_ Component entfernen
+```javascript
+entity.removeAttribute('sound');
+```
 <hr>
 
-Event-Listener eines `Entity`
+###### **Event-Listener eines Entity**
 
 Entities können über einen Eventlistener auf Änderungen ihrer Components reagieren.
 
@@ -239,55 +332,9 @@ entity.addEventListener('child-attached', function (evt) {
   };
 });
 ```
-
-<hr>
-
-**Components**
-
-Components sind wiederverwendbare Objekte die einem Entity hinzugefügt werden und diesem dann ihr Verhalten/ihre Eigenschaften hinzufügen. Aus vielen kleinen Components kann so eine komplexe Entität erzeugt werden.
-
-<figure id="imgComponents">
-  <img src="./images/components.jpg"/>
-</figure>
-
-In HTML entspricht das Attribut dem Component-Namen und die Werte entsprechen den Component Daten. Innerhalb einer Entity sieht das also wie folgt aus.
-
-`component="component-data"`
-
-entspricht z.B.
-
-`position="1 2 3"`
-
-Es gibt Single-Property-Components und Multi-Property-Components
-
-<hr>
-
-`Single-Property-Components` Daten werden durch einen Wert repräsentiert. Sie sehen daher wie reguläre HTML-Attribute aus.
-
-```html
-<!-- `position` is the name of the position component. -->
-<!-- `1 2 3` is the data of the position component. -->
-<a-entity position="1 2 3"></a-entity>
-```
-
-<hr>
-
-`Multi-Property-Components` Daten werden durch mehrere Attribute und Werte definiert.
-
-```html
-<!-- `light` is the name of the light component. -->
-<!-- The `type` property of the light is set to `point`. -->
-<!-- The `color` property of the light is set to `crimson`. -->
-<a-entity light="type: point; color: crimson"></a-entity>
-```
-
-Components bieten eine Vielzahl an Optionen und Methoden. Mehr auf [AFRAME-Components](https://aframe.io/docs/0.3.0/core/component.html)
-
-<hr>
-
-**Animation**
-
-Die Box kann nun in seinem Verhalten verändert werden. Beispielsweise können wir die Box animieren, zum Beispiel in der Farbe.
+###### **Animation**
+A-Frame erlaubt Entities zu animieren.
+Zum Beispiel können wir die Box animieren, beispielsweise in der Farbe.
 
 ```html
 <a-box width="4" height="10" depth="2">
@@ -301,8 +348,7 @@ Die Animationen sind nützlich für vordefinierte Szenerien bei denen mehr Beweg
 
 Mehr zu [Animationen](https://aframe.io/docs/0.3.0/core/animations.html)
 
-**Licht**
-
+###### **Licht**
 Als nächstes kann die Szene beleuchtet werden. Eine Szene ist zu Beginn immer beleuchtet, nach hinzufügen von Lichtern werden die Start-Lichter jedoch entfernt.
 
 Lichter lassen sich wie normale Entities hinzufügen.
@@ -332,13 +378,13 @@ Es gibt folgende Typen:
 
 Mehr zu [Licht](https://aframe.io/docs/0.3.0/components/light.html)
 
-**Himmel**
+###### **Himmel**
 
 ```html
 <a-sky color="#73F7DD"></a-sky>
 ```
 
-Über den Asset-Manager können Bilder geladen werden.
+Über den Asset-Manager können Bilder geladen werden(s. 3.3.4).
 
 ```html
 <a-sky src="Asset-ID"></a-sky>
@@ -348,10 +394,7 @@ Als letztes fügen wir einen Himmel unserer Szene hinzu. Bei der Auswahl des Bil
 
 Mehr zu [Sky](https://aframe.io/docs/0.3.0/primitives/a-sky.html)
 
-
-##### 3.3.4 Interaktion mit Objekten
-
-##### 3.3.5 Asset-Management-System
+##### 3.3.4 Asset-Management-System
 
 Das Asset-Management-System bietet die Möglichkeit Assets, also (Media-)Dateien, in einem abgegrenzten Bereich vorzuladen und im Cache zu halten. Dies ist wichtig, denn das _preloaden_ der Dateien vor dem Rendern hält die Assets in einem Cache, verhindert das Fehlen von Assets in der Szene und verbessert die Performance.
 
@@ -363,8 +406,9 @@ Folgende Assets HTML-Elemente werden für A-FRAME definiert:
 * `<audio>` - Audio Dateien
 * `<img>` - Bilder (Texturen)
 * `<video>` - Video (Texturen)
+* `<a-mixin>` - s. 3.3.5
 
-Diese Assets können dann innerhalb der Scene Entities benutzt werden.
+Diese Assets können dann innerhalb der Entities benutzt werden.
 
 ```html
 <a-scene>
@@ -384,7 +428,7 @@ Diese Assets können dann innerhalb der Scene Entities benutzt werden.
 </a-scene>
 ```
 
-##### 3.3.6 Mixins
+##### 3.3.5 Mixins
 
 Mixins bieten die Möglichkeit mehrere Components zusammenzufassen und wiederzuverwenden (Sammelbecken von Components). Sie werden im Asset-Management-System über das `<a-mixin></a-mixin>` Element eingebunden. Entities die das Mixin einbinden enthalten folglich die Eigenschaften der Mixin-Components.
 
@@ -460,7 +504,7 @@ Reihenfolge
 
 `mixin="1.eingebunden 2.eingebunden 3.eingebunden"` => 4.Entity Eigenschaften eingebunden
 
-##### 3.3.7 Wichtige/Nützliche Tools/Components
+##### 3.3.6 Wichtige/Nützliche Tools/Components
 
 **Tools**
 
@@ -513,4 +557,10 @@ Elementar und bereits genannt:
 
 ##### 3.4 Ausblick
 
-A-FRAME erreicht Mitte Januar seinen 1. Geburtstag. Bis dahin soll Version 0.4.0 released werden.
+A-FRAME ist am 16.12.16 auf Version 0.4.0 geupdated worden. A-FRAME zielt weiterhin darauf ab 'Community-Driven'
+ zu bleiben.
+
+
+ <figure id="imgCompOverInher">
+   <img src="./images/a-frame community.png"/>
+ </figure>
