@@ -37,7 +37,7 @@ Ist ein freier und beliebter Texteditor, welcher viele Programmiersprachen im Hi
 ###### 1.5.3 Community Clients - caprine
 Ist ein inoffizieller Facebook-Chat-Client.
 ###### 1.5.4 Hardwarelösungen - Airtame
-Anwendern ist es mit einem speziellen HDMI-Wireless-Stick möglich ihren Bildschirminhalt kabellos zu teilen. Dazu wird der Stick in den Grafikkartenausgang des Hosts gesteckt. Nun ist es jedem Benutzer der Airtime Applikation (basiert auf Electron) möglich den Bildschirm des Hosts zu streamen.
+Anwendern ist es mit einem speziellen HDMI-Wireless-Stick möglich ihren Bildschirminhalt kabellos zu teilen. Dazu wird der Stick in den Grafikkartenausgang des Hosts gesteckt. Nun ist es jedem Benutzer der Airtame Applikation (basiert auf Electron) möglich den Bildschirm des Hosts zu streamen.
 ###### 1.5.5 Softwareenticklung - Amium
 Dient der Dateiverwaltung bei Projekten in größeren Gruppen. Es ermöglicht zum Beispiel mehreren Personen gleichzeitig die Bearbeitung an einer einzigen Worddatei.
 ###### 1.5.6 Sicherheit - BitCrypt
@@ -59,8 +59,30 @@ Linux: Ubuntu ab 12.04, Fedora ab 21 und Debian ab 8
 
 ## 2 SQLite
 #### 1.1 Was ist SQLite
+Mit SQLite ist man in der Lage eine kleine relationale Datenbank lokal und Server/Client unabhängig zu verwalten. Sie unterstützt einen Großteil der im SQL-92-Standard festgelegten SQL-Sprachbefehle und ist somit weitestgehend mit MSSQL- und MySQL-Skripten kompatibel. Die angelegte Datenbank liegt als einzelne .db Datei vor und ist binär codiert.
 #### 1.2 Anwendungsgebiete
-#### 1.3 Vorraussetzungen zur Ausführung
-#### 1.4 Tools und Libaries zur Entwicklung
+SQLite wird meist in relativ kleinen Umgebungen verwendet. Dort wo kleine und überschaubare Datenmengen anfallen und die sich dann jeweils nur auf die entsprechende Anwendung oder dem entsprechendem Gerät beziehen.
 
+Eingesetzt wird es z.B. in den Betriebssystemen Symbian OS und Android. Als auch im Webbrowser Mozilla Firefox zur Datenverwaltung von Cookies und Lesezeichen.
+#### 1.3 Vorraussetzungen zur Ausführung
+SQLite hat sehr geringe Leistungsansprüche und ist somit auch ideal für eingebettete Systeme geeigenet.
+
+Speicherplatz: ab 300KiB
+
+Arbeitsspeicher: ab 104KiB (Stack = 4KiB & Heap = 100KiB)
+#### 1.4 Tools und Libaries zur Entwicklung
+Mit dem kostenlosen SQLite Database Browser ist es möglich .db Datein zu öffnen und zu erstellen. Es ist ebenfalls möglich direkt Skripte zu schreiben und sie auszuführen. Datenmanipulation in bestehenden Datenbankdomänen ist auch gegeben.
+![picture](./img/SQLiteDatabaseBrowserPortable.png)
 ## 3 Anhang und Literaturverzeichnis
+* [5EClient](https://www.5eplay.com/)
+* [Atom](https://atom.io/)
+* [Airtame](https://airtame.com/)
+* [Amium](https://www.amium.com/)
+* [BitCrypt](https://github.com/Nazgul07/BitCrypt)
+* [brave](https://brave.com/)
+* [Caprine](https://github.com/sindresorhus/caprine)
+* [CSS](https://wiki.selfhtml.org/wiki/CSS)
+* [Electron](http://electron.atom.io)
+* [Google Chromium](https://wiki.ubuntuusers.de/chromium/)
+* [HTML](https://wiki.selfhtml.org/wiki/HTML)
+* [JavaScript](https://wiki.selfhtml.org/wiki/JavaScript)

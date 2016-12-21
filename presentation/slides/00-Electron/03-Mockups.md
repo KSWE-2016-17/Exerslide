@@ -1,9 +1,8 @@
 ---
-title: Mockups
+title: GUI Mockups
 chapter: Electron
 id: ETN_Mockups
 ---
-# GUI Mockups
 ## Startseite
 ![picture](./img/MockUp_Startseite.png)
 
