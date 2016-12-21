@@ -4,42 +4,47 @@ chapter: Electron
 id: ETN_Pflichtenheft
 ---
 
-Musskriterien:
+# 1 Anforderungsanalyse
+Durak ist ein russisches Kartenspiel welches mit mehreren Personen gespielt wird. Ziel der Applikation ist es, als Unterhaltungsmedium zu fungieren und den Anwender somit zu begeistern. Es soll das Spielen gegen KI gesteuerte Gegner, sowie auch realen menschlichen Gegnern per Internetverbindung ermöglichen.
+## 1.1	Musskriterien
+*	Portabel auf allen Betriebssystemen für Desktopsysteme (Laptops, Computer)
+*	Spielbar gegen Computer Gegner
+*	Spielbar gegen Menschliche Gegner
+*	Updatesystem implementiert
+*	Die Applikation folgt den klassischen Spielregeln von Durak
+*	Es ist möglich einen Server zu hosten
+*	Es ist möglich einem Server als Client beizutreten
 
-	*Produktsuchfunktion
-		+API/Parser Implementierung
+## 1.2	Wunschkriterien
+*	Spielerkontosystem implementiert
+*	Kontospieler können anderen Kontospieler folgen und werden so benachrichtigt sofern der jeweils andere eine Partie spielt
+*	Tonausgabe (Effekte und Musik)
+*	Weitere bekannte Regelvariationen Implementieren
+*	Per Ad-hoc Verbindung Multiplayer ermöglichen
 
-	*Kaufverwaltung
-		+Produktkategorienübersicht
-		+Warenkorb implementieren
+## 1.3	Abgrenzungskriterien
+*	Die Applikation wird nicht für mobile Geräte (Smartphones) verfügbar sein
 
-	*Benutzerkontoverwaltung
-		+Automatische Loginverwaltung (versch. Händler)
 
-	*Design
-		+Basic-Design (nur funktionale GUI)
+# 2	Produkteinsatz
+## 2.1	Anwendungsbereiche
+Da es sich hierbei um ein Unterhaltungsmedium handelt, ist der Anwendungsbereich im privaten Raum vorgesehen.
 
-	*Update Funktion
-		+automatische Updatefunktion implementieren
+## 2.2	Zielgruppen
+Die Zielgruppe definiert sich durch, Personen welche an Kartenspielen, oder dem Durak Kartenspiel selbst, interessiert sind und im simplen Umgang mit Computer/Laptops vertraut sind.  
 
-Wunschkriterien:
+## 2.3	Betriebsbedingungen
+Da das Electron Framework verwendet wird und es sich hierbei um eine webbasierte Anwendung handelt, ist die Applikation weitestgehend Plattformunabhängig. Sie setzt nur die Ausführung von Google Chromium voraus, welche an die folgenden Bedingungen geknüpft ist:
 
-	*Benutzerkontoverwaltung
-		+Bevorzugte/kategorisierte Artikel und Händler definieren
-		+1 Klick Bezahlautomatisierung
-		+Rabattgutschein-Einlöse-Funktion
-		+Händler Selektion
+*	Software:
+  * Mind. Windows 7 (keine ARM Versionen)
+  * Mind. OS X 10.9. (nur 64 Bit)
+  * Mind. Ubuntu 12.04
+  * Mind. Fedora 21
+  * Mind. Debian 8
 
-	*Kaufverwaltung
-		+Retoure Funktion
-		+Wunschversand Angabe (Wann, Versandfirma)
 
-	*Design
-		+High-End Design
-
-	*Sonstiges
-		+Preisempfehlung von externen Versanddiensten (via Google Shopping)
-
-Abgrenzungskriterien:
-
-	*Der Benutzer kann keine eigenen Artikel zum Verkauf anbieten.
+* Hardware:
+  * Windows – Intel Pentium 4 und 512 MB RAM
+  * Mac – 64 Bit Intel Prozessor
+  * Linux – Intel Pentium 4 Prozessor
