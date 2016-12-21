@@ -4,7 +4,7 @@ chapter: Augmented Reality
 id: AR_AFrame
 ---
 
-Javascript Framework um Augmented Reality Inhalte in Web Anwendungen darzustellen
+Javascript Framework um Virtual Reality Inhalte in Web Anwendungen darzustellen.
 
 ## Was ist A-Frame?
 
@@ -25,3 +25,8 @@ A-Frame is an open-source web framework for building virtual reality experiences
 Ergebnis als Screenshot:
 
 ![Use Case System](./images/concepts/AFrameHelloWorld.png)
+
+
+## Weitere Informationen
+Da sich das Kapitel ArgonJS weitestgehend mit dem Projekt A-Frame überschneidet, können weitere Informationen zu dem Framework aus dem Projekt MyMemorySpace entnommen werden.
+
