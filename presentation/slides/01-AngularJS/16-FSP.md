@@ -31,7 +31,7 @@ class Flickr {
 ``` 
 ²
 
-Da der Standard http Service von Angular ebenfalls in der Version 2 entfernt wurde, wird in dieser
+Da der Standard http Service von Angular in der Alpha der Version 2 noch nicht vorhanden war, wird in dieser
 Klasse die Fetch API verwendet³. 
 
 ## Verwendung des Service in Komponente

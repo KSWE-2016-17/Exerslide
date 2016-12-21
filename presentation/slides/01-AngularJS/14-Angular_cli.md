@@ -19,7 +19,7 @@ Der Befehl 'new' + PROJEKTNAME erstellt ein neues Angular 2 Projekt und installi
 Abhängigkeiten. Zu beachten ist hierbei, dass man den gewünschten Pfad für das Projekt mit angibt.
 Hierdurch erleichtert es enorm den Einstieg in Angular, da die manuelle Ersteinrichtung eines Projekts sehr viel Zeit in Anspruch nehmen würde und gerade für Anfänger 
 aufgrund der komplexen Struktur schwer zu durchschauen ist¹. Das Projekt kann dann in dem 
-Projektordner mit 'serve' gestartet werden. Wurde das Projekt gestartet wird dieses kompiliert und 
+Projektordner mit 'serve' gestartet werden. Alternativ kann auch 'npm start' verwendet werden. Wurde das Projekt gestartet wird dieses kompiliert und 
 ausgeführt. Die Webanwendung ist nun unter [localhost:4200](http://localhost:4200/) erreichbar.
 Führt man Änderungen am Sourcecode durch, werden diese nach abspeichern automatisch erkannt
  und die Anwendung neu geladen. 
@@ -36,7 +36,7 @@ angegeben.²
 
 # Projektaufbau
 
-Beim erstellen unseres Projekts sieht unser Projektornder folgendermaßen aus. Im großen und ganzen finden wir uns
+Beim erstellen unseres Projekts sieht unser Projektordner folgendermaßen aus. Im großen und ganzen finden wir uns
 bekannte Dateien wieder. Das Herz unseres Programm ist der "app"-Ordner.
 
 ```
@@ -95,7 +95,7 @@ man nun auf dieses HTML-Okjebt klickt, wird die dazugehörige Funktion ausgefüh
 </li>
 ```
 
-Für dieses Beispiel nehmen wir an, wir haben ein Array namens "links" in der gleichnamen Typescript Datei. "*ngFor" ist
+Für dieses Beispiel nehmen wir an, wir haben ein Array namens "links" in der gleichnamigen Typescript Datei. "*ngFor" ist
 eine foreach Schleife. Für jedes Objekt im Array "links" wird bis zum schließenden Tag der HTML Bereich generiert. In
 diesem Fall haben wir mit dem Befehl "li" eine Aufzählung. Mit "{{link.id}}" können wir die Attribute unseres Objekts
 anzeigen lassen, in diesem Fall hat unser Objekt eine ID und einen Namen. Mit diesem Code erzeugen wir also eine
