@@ -32,7 +32,7 @@ Nach Titel
 | Name | Typ |
 | :--- | :---- |
 |  Title | string |
-| Year | integer |
+| Year | integer / NULL |
 | Plot | Short / Full |
 | Response | JSON / XML |
 
