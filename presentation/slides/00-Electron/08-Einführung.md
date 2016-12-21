@@ -75,74 +75,67 @@ Anschließen geben wir noch mit `dependencies` oder `devDependencies` an, welche
 Hier wird mit `dev` unterschieden ob es sich nur für die Entwicklungszwecke handelden Abhängikeiten sind oder um Produktionsszwecke.
 
 ##### 1.8.2 main.js
-Die `main.js` sollte unser Fenster erstellen und Systemevents behandeln.
+Die `main.js` sollte unser Fenster erstellen und Systemevents behandeln. Die Genaure Beschreibung der einzelnen Codeabschnitten sind im Beispiel als Kommentar hinterlegt.
 
  ``` javascript
  const electron = require('electron')
- // Module to control application life.
+// Modul für die Kontrolle der Applikation
  const app = electron.app
- // Module to create native browser window.
+ // Modul um ein natives Fenster zu erstellen
  const BrowserWindow = electron.BrowserWindow
 
  const path = require('path')
  const url = require('url')
 
- // Keep a global reference of the window object, if you don't, the window will
- // be closed automatically when the JavaScript object is garbage collected.
+  // Globale Referenze für das Fenster Objekt
+  // Wird automatisch geschlossen, wenn JavaScript das Objekt "garbage collected"
  let mainWindow
 
  function createWindow () {
-   // Create the browser window.
+
+   // Erstellt das Browserfenster
    mainWindow = new BrowserWindow({width: 800, height: 600})
 
-   // and load the index.html of the app.
+   // Wir laden die index.html der Applikation
    mainWindow.loadURL(url.format({
      pathname: path.join(__dirname, 'index.html'),
      protocol: 'file:',
      slashes: true
    }))
 
-   // Open the DevTools.
+   // Öffnet die Konsole fürs Debugen
    mainWindow.webContents.openDevTools()
 
-   // Emitted when the window is closed.
+   // Wird benachrichtigt, wenn das Fenster geschlossen wird
    mainWindow.on('closed', function () {
-     // Dereference the window object, usually you would store windows
-     // in an array if your app supports multi windows, this is the time
-     // when you should delete the corresponding element.
+     // Derefenzierung des Fenster Objekts
      mainWindow = null
    })
  }
 
- // This method will be called when Electron has finished
- // initialization and is ready to create browser windows.
- // Some APIs can only be used after this event occurs.
+ // Diese Methode wird aufgerufen wenn Electron fertig geladen hat und bereit ist das Fenster zu laden
  app.on('ready', createWindow)
 
- // Quit when all windows are closed.
+ // Benachrichtigung wenn alle Fenster geschlossen sind
  app.on('window-all-closed', function () {
-   // On OS X it is common for applications and their menu bar
-   // to stay active until the user quits explicitly with Cmd + Q
    if (process.platform !== 'darwin') {
      app.quit()
    }
  })
 
- app.on('activate', function () {
-   // On OS X it's common to re-create a window in the app when the
-   // dock icon is clicked and there are no other windows open.
+ app.on('activate', function () {.
+//In OS X ist es üblich Fenster zu erstellen wenn ein Dock Item angeklickt wurde und keine weiteren Fenster existieren.
    if (mainWindow === null) {
      createWindow()
    }
  })
-
- // In this file you can include the rest of your app's specific main process
- // code. You can also put them in separate files and require them here.
  ```
  Quelle: https://github.com/electron/electron-quick-start
 
 ##### 1.8.3 index.html
 Schlussendlich brauchen wir noch unsere `index.html`. Die schreiben wir in ganz normalem Html.
+Script Elmente können wie bei Node.js üblich direkt in die Datei, mit `require` eingebunden werden.
+
 
 ```html
 <!DOCTYPE html>
@@ -160,8 +153,62 @@ Schlussendlich brauchen wir noch unsere `index.html`. Die schreiben wir in ganz 
 </html>
 ```
 
-##### 1.8.4 App starten
-Nachdem wir nun unsere nötigen Datein `main.js`, `index.html` und `package.json` erstellt haben, können wir unser Projekt starten.
+##### 1.8.4 Electron starten
+Da wir nun alle nötigen Vorraussetzungen für unser Electron Projekt erfüllt haben, können wir unser Projekt über unser Arbeitsverzeichnis mit `npm start` starten.
+Falls unsere Abhängikeiten nicht installiert sind müssen wir diese vorher mit dem Befehl `npm install` installieren.
+
+Am besten führen wir beim ersten starten folgenden Befehl aus.
+```
+npm install && npm start
+```
+
+##### 1.8.5 Electron Packager
+Mit dem Package `electron-packager` haben wir die Möglichkeit für unterschiedliche Betriebssysteme Bundles unseres Election Projekts erstellen.
+Dadurch können die Endnutzer das Projekt direkt über eine Auführbare Datei starten.
+
+###### 1.8.5.1 Betriebssysteme
+`electron-packager` erstellet für die folgenden Betriebssysteme ausführbare Dateien.
+* Windows (32/64 bit)
+* OS X
+* Linux (x86/x86_64)
+
+###### 1.8.5.2 Installieren
+`electron-packer` können wir mit
+```
+npm install electron-packager --save-dev
+```
+installieren
+
+###### 1.8.5.3 Auführen
+```
+electron-packager <sourcedir> <appname> [options...]
+```
+| Arugment  | Funktion  |
+|---|---|
+| sourcedir | Das Hauptverzeichnis unserer Applikation  |
+| appname | Appname |
+| --platform | gibt an für welche Betriebssysteme ausführbare Dateien erstellt werden sollen |
+| --arch | Welche Architekure verwendet werden soll x32 oder x64 |
+| --all | gleichgesetzt mit  --platform=all --arch=all|
+| --out |  gibt an in welchen Ordner die Dateien hinterlegt werden sollen |
+
+Um für alle Betriebssysteme eine auführbare Datei zu erstellen können wir den den folgenden Befehlt benutzen
+```
+electron-packager . --all
+```
+Dies generiert uns alle Dateien im aktuellen Arbeitsverzeichnis
+```
+App
+├── App AppName-darwin-x64
+│   ├── App AppName.app
+│   │   └── [Mac App Inhalt]
+│   ├── LICENSE
+│   └── version
+├── [ weitere Bundles, wie "App AppName-win32-x64"]
+├── package.json
+├── index.html
+└── main.js
+```
 
 #### 1.9 API
 ###### 1.9.1 Main Prozess
@@ -181,9 +228,40 @@ Der Hauptprozess verwaltet alle Seiten und deren zuständien Renderer Prozesse. 
 Wenn eine Seite über die GUI auf Native Elemente zugreifen will, dann wird es nicht direkt über die Seite gemacht, das wäre zu gefährlich und könnte zu Lecks führen. Daher muss der Render Prozess einer Seite erst mit dem Hauptprozess kommunizieren um die Nativen Operationen ausführen zu können.
 
 In Electron haben wir mehrere Wege um eine Kommunikation zwischen Render Prozess und dem Hauptprozess erzustellen.
-Z. B. `ipcRenderer`um Asynchron vom Render Prozess mit dem Hauptprozess zu kommunizeren.
+Z. B. `ipcRenderer`und `ipcMain` um Asynchron/synchron zwischen Render Prozess und dem Hauptprozess zu kommunizeren.
 
-//TODO ipcRenderer beschreiben
+###### 1.9.3.1 ipcMain
+Das `ipcMain` Module ist eine Instanz der `EventEmitter` Klasse. Die ist dafür zuständig, asynchrone sowie synchrone Nachrichten vom zu empfangen, diese wenn nötig zu bearbeiten und den Renderprozess zu informieren.
+
+```javascript
+const {ipcMain} = require('electron')
+ipcMain.on('asynchronous-message', (event, arg) => {
+  console.log(arg)
+  event.sender.send('asynchronous-reply', 'pong')
+})
+
+ipcMain.on('synchronous-message', (event, arg) => {
+  console.log(arg)
+  event.returnValue = 'pong'
+})
+```
+
+###### 1.9.3.2 ipcRenderer
+Das `ipcRenderer` Modul ist wie `ipcMain` eine Instanze der `EventEmitter` Klasse. Mit diesem Modul können wir Nachrichten an den `ipcMain` verschicken, und Nachrichten vom `ipcMain` empfangen.
+
+```javascript
+const {ipcRenderer} = require('electron')
+console.log(ipcRenderer.sendSync('synchronous-message', 'ping'))
+
+ipcRenderer.on('asynchronous-reply', (event, arg) => {
+  console.log(arg)
+})
+ipcRenderer.send('asynchronous-message', 'ping')
+```
+
+
+
+
 
 ## 2 SQLite
 #### 1.1 Was ist SQLite
