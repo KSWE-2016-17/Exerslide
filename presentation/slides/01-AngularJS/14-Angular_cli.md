@@ -15,13 +15,14 @@ gibt eine Übersicht des Funktionsumfangs der CLI aus.
 
 # Projekt erstellen
 
-Der Befehl 'new' erstellt ein neues Angular 2 Projekt und installiert mittels npm die entsprechenden
-Abhängigkeiten. Hierdurch erleichtert es enorm den Einstieg in Angular, da die manuelle 
-Ersteinrichtung eines Projekts sehr viel Zeit in Anspruch nehmen würde und gerade für Anfänger 
+Der Befehl 'new' + PROJEKTNAME erstellt ein neues Angular 2 Projekt und installiert mittels npm die entsprechenden
+Abhängigkeiten. Zu beachten ist hierbei, dass man den gewünschten Pfad für das Projekt mit angibt.
+Hierdurch erleichtert es enorm den Einstieg in Angular, da die manuelle Ersteinrichtung eines Projekts sehr viel Zeit in Anspruch nehmen würde und gerade für Anfänger 
 aufgrund der komplexen Struktur schwer zu durchschauen ist¹. Das Projekt kann dann in dem 
 Projektordner mit 'serve' gestartet werden. Wurde das Projekt gestartet wird dieses kompiliert und 
-ausgeführt. Führt man Änderungen am Sourcecode durch, werden diese nach abspeichern 
-automatisch erkannt und die Anwendung neu geladen. 
+ausgeführt. Die Webanwendung ist nun unter [localhost:4200](http://localhost:4200/) erreichbar.
+Führt man Änderungen am Sourcecode durch, werden diese nach abspeichern automatisch erkannt
+ und die Anwendung neu geladen. 
 
 # Komponenten erstellen
 
