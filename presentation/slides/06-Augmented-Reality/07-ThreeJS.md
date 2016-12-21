@@ -62,7 +62,7 @@ function init() {
   var height = window.innerHeight;
 
   // Erstellen der Kamera
-  camera = new THREE.PerspectiveCamera(45, WIDTH / HEIGHT, 0.1, 20000);
+  camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 20000);
 
   // Position der Kamera festlegen
   camera.position.set(0,0,500);
@@ -92,7 +92,7 @@ function init() {
   // Code aus dem vorherigen Schritt zur Übersichtlichkeit entfernt
 
   // Erstellen des Renderers
-  var renderer = new THREE.WebGLRenderer();
+  renderer = new THREE.WebGLRenderer();
 
   // Festlegen der Größe des Bildes in der Szene
   renderer.setSize(width, height);
@@ -145,4 +145,6 @@ function animate() {
 ```
 Auch die Funktion *animate()* wird in der *init()*-Funktion aufgerufen und sorgt dafür, dass sich der Würfel um seine x- und y-Achse dreht.
 
-Wenn dieses Skript ausgeführt wird, wird ein sich rotierender Würfel auf schwarzen Hintergrund angezeigt.
+Wenn dieses Skript ausgeführt wird, wird ein sich rotierender Würfel auf schwarzen Hintergrund angezeigt, wie der folgenden Abbildung zu entnehmen ist.
+
+![Cube](./images/concepts/cube.gif)
