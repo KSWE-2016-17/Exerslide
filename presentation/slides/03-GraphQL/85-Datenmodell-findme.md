@@ -47,7 +47,7 @@ Nachfolgend ist das derzeitige Datenmodell aufgeführt.
 | eyecolor     | Number                | 0 = blue, 1 = green, 2 = brown                                                                        |          | User's eye color.                               |
 | figure       | Number                | 0 = slim, 1 = regular, 2 = plussize                                                                   |          | User's body type.                               |
 
-# Preferences
+# Preference
 
 | Attribute | Type                    | Value                                     | Required | Description                                         |
 |:----------|:------------------------|:------------------------------------------|:---------|:----------------------------------------------------|
@@ -60,7 +60,7 @@ Nachfolgend ist das derzeitige Datenmodell aufgeführt.
 | eyecolor  | Number                  | 0 = blue, 1 = green, 2 = brown            |          | The eye color looking for.                          |
 | figure    | Number                  | 0 = slim, 1 = regular, 2 = plussize       |          | The body type looking for.                          |
 
-# Friends
+# Friend
 
 | Attribute | Type                    | Value                                                                                  | Required | Description                                     |
 |:----------|:------------------------|:---------------------------------------------------------------------------------------|:---------|:------------------------------------------------|
@@ -68,7 +68,7 @@ Nachfolgend ist das derzeitige Datenmodell aufgeführt.
 | profile   | ObjectId (ref: Profile) |                                                                                        | x        | Reference of the profile the friends belong to. |
 | friends   | Array({ id, status })   | { id: ObjectId (ref: Profile, status: Number (0 = request, 1 = accepted, 2 = denied) } | x        | List of mappings of offers for friendslist.     |
 
-# Messages
+# Message
 
 | Attribute    | Type                    | Value | Required | Description                                                    |
 |:-------------|:------------------------|:------|:---------|:---------------------------------------------------------------|
