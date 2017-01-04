@@ -1,6 +1,6 @@
 ---
 title: GitHubStats Mockups
-style: |
+style: |-
   figure {
     display: inline-block;
   }
@@ -9,6 +9,7 @@ style: |
 <figure>
   <img src="./images/githubstats-overview-mockup.png" alt="Übersicht">
 </figure>
+
 <figure>
   <img src="./images/githubstats-detail-mockup.png" alt="Detail">
 </figure>
