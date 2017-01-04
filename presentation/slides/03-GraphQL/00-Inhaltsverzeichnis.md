@@ -12,5 +12,5 @@ chapter: GraphQL
 - Praxis
   - GraphQL Clientseitig
   - GraphQL Serverseitig
-  - GraphQL und Mongoose
+  - GraphQL und Mongoose: graphql-compose-mongoose
 - Projekte
