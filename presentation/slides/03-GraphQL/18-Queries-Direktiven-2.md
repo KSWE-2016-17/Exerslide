@@ -12,5 +12,5 @@ Die derzeitig unterstützten Direktiven sind:
 ```
 
 ```
-@skip(if: Boolean) Das Feld wird nicht inkludiert wenn if = false.
+@skip(if: Boolean) Das Feld wird nicht inkludiert wenn if = true.
 ```
