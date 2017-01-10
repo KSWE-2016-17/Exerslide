@@ -43,7 +43,7 @@ entsprechende Element je nach Einstellung darstellt oder nicht²:
 
 ## Strukturelle Direktiven
 
-Strukturelle Direktiven fügen dem DOM-Baum Elemente hinzu oder entfernen Sie. Ein Beispiel
+Strukturelle Direktiven fügen dem DOM-Baum Elemente hinzu oder entfernen diese. Ein Beispiel
 hierfür ist die ngIf Direktive. Diese wird ebenfalls in ein HTML Tag eingebettet und kann weitere
 Elemente an den DOM Baum anhängen.
 
