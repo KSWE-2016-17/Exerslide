@@ -52,13 +52,13 @@ Elemente an den DOM Baum anhängen.
 ```
 ⁵
 
-Es kann aber auch dazu verwendet werden, Die Anzeige bestimmter Elemente zu beschränken, 
+Es kann aber auch dazu verwendet werden, die Anzeige bestimmter Elemente zu beschränken, 
 sodass diese nur dargestellt werden, wenn eine Funktion einen bestimmten Wert zurückgibt:
 
 ```
 <ion-content class="no-scroll" padding *ngIf="!auth.authenticated()">
 ```
-Alle Elemente Innerhalb dieses ion-content Tags werden nur dargestellt, wenn die Funktion
+Alle Elemente innerhalb dieses ion-content Tags werden nur dargestellt, wenn die Funktion
 authenticated() den Wert 'false' zurückgibt.
 
 # Quellen
