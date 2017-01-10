@@ -38,7 +38,7 @@ entsprechende Element je nach Einstellung darstellt oder nicht²:
 
 ```
 <p ng-show="true">wuppie fluppie</p>
-<p ng-show="true">wird nicht angezeigt</p>
+<p ng-show="false">wird nicht angezeigt</p>
 ```
 
 ## Strukturelle Direktiven
